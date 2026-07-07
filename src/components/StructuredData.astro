@@ -15,7 +15,7 @@ const tourist = JSON.stringify({
   image: new URL('/gallery/punto-panoramico-circuito-chico-1.jpg', Astro.site).href,
   address: { '@type': 'PostalAddress', streetAddress: 'Circuito Chico (RP77)', addressLocality: 'San Carlos de Bariloche', addressRegion: 'Río Negro', postalCode: '', addressCountry: 'AR' },
   geo: { '@type': 'GeoCoordinates', latitude: -41.1233, longitude: -71.3472 },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.6', reviewCount: '2000' },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '15000' },
   openingHours: 'Mo-Su 00:00-24:00',
 });
 
@@ -23,7 +23,7 @@ const faqData = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'No. Punto Panorámico is a free public viewpoint, open 24 hours and unattended. Daylight and dusk offer the best views.' } },
-    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'By car or bike along the paved RP77 Circuito Chico (~12 km from downtown Bariloche); or take the Línea 20 bus and walk from the nearby stop.' } },
+    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'From downtown Bariloche, drive, take a taxi/remis, cycle the paved RP77 Circuito Chico, or ride Línea 20 and walk from a nearby stop. From BRC airport, most visitors first reach town and then continue by rental car, taxi/remis, tour, or a transfer to Línea 20.' } },
     { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'On a clear day for the blue lake and snow peaks; about 60 minutes before sunset Cerro Tronador glows gold-red — the golden window for photography.' } },
     { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The terrace edge has no railing — keep clear of the drop and watch children. The Andean westerlies are strong, so dress for wind and cold; there are no facilities nearby.' } },
   ],

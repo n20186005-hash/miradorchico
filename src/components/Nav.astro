@@ -8,8 +8,7 @@ const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || ''
 ---
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-[rgba(247,243,234,.75)] border-b border-black/5">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href={`/${lang}/`} class="flex items-center gap-2">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 20c3-6 6-6 9 0 3-6 6-6 9 0" stroke="#1F3B34" stroke-width="2" stroke-linecap="round"/><path d="M4 14c4-9 12-9 16 0" stroke="#2F6B4E" stroke-width="2" stroke-linecap="round"/></svg>
+    <a href={`/${lang}/`} class="flex items-center">
       <span class="font-display font-semibold tracking-tight">Punto Panorámico · Bariloche</span>
     </a>
     <nav class="hidden md:flex items-center gap-7 text-sm text-[color:var(--color-moss)]">

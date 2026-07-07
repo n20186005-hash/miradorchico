@@ -158,7 +158,7 @@ export const ecology = {
         zh: `树干泛着橙红光泽的桃金娘科灌木，集中在附近的洛斯阿赖内斯国家保护区。其光滑的"红皮"是巴里洛切森林里最上镜的植物之一。`,
         en: `A myrtle with an orange-red glowing trunk, concentrated in the nearby Los Arrayanes National Park. Its smooth "red bark" is among the most photogenic plants of Bariloche's forest.`,
         it: `Mirto dal tronco sfavillante arancione-rosso, concentrato nel vicino Parco Nazionale Los Arrayanes. La sua "corteccia rossa" liscia è tra le piante più fotogeniche del bosco di Bariloche.`,
-        es: `Una mirnácea de tronco naranja-rojizo, concentrada en el cercano Parque Nacional Los Arrayanes. Su "corteza roja" lisa es una de las plantas más fotogénicas del bosque de Bariloche.`,
+        es: `Una mirtácea de tronco naranja-rojizo, concentrada en el cercano Parque Nacional Los Arrayanes. Su "corteza roja" lisa es una de las plantas más fotogénicas del bosque de Bariloche.`,
       } as T,
       iucn: 'LC',
       icon: '🌿',
@@ -202,10 +202,10 @@ export const faq = {
     {
       q: { zh: `如何前往 Punto Panorámico？`, en: `How do I get to Punto Panorámico?`, it: `Come arrivo al Punto Panorámico?`, es: `¿Cómo llego al Punto Panorámico?` } as T,
       a: {
-        zh: `最方便的方式是沿小环线 RP77 自驾或骑行，距市中心约 12 公里，全程铺装柏油；无车旅客可乘 Línea 20 公交车至附近站点下车步行。`,
-        en: `The easiest way is to drive or cycle the RP77 Circuito Chico, about 12 km from downtown on fully paved road; car-free travellers can take the Línea 20 bus and walk from the nearby stop.`,
-        it: `Il modo più semplice è in auto o in bici lungo il Circuito Chico (RP77), a circa 12 km dal centro, tutto asfaltato; chi non ha auto può prendere la Línea 20 e scendere alla fermata vicina.`,
-        es: `Lo más fácil es ir en auto o bici por el Circuito Chico (RP77), a unos 12 km del centro, todo pavimentado; quienes no tienen auto pueden tomar la Línea 20 y caminar desde la parada cercana.`,
+        zh: `从巴里洛切市中心前往，最方便的方式是沿小环线 RP77 自驾、打车 / remis、骑行，或乘 Línea 20 到附近站点后步行；若从 Teniente Luis Candelaria（BRC）机场出发，通常需先进入市区，再换乘 Línea 20、参加小环线半日游，或直接租车 / taxi / remis 前往。`,
+        en: `From downtown Bariloche, the easiest options are to drive, take a taxi/remis, cycle the paved RP77 Circuito Chico, or ride Línea 20 and walk from a nearby stop; from Teniente Luis Candelaria Airport (BRC), most travellers first reach town and then transfer to Línea 20, join a Circuito Chico half-day tour, or continue directly by rental car or taxi/remis.`,
+        it: `Dal centro di Bariloche, le opzioni più semplici sono l'auto, il taxi/remis, la bicicletta lungo la RP77 asfaltata oppure la Línea 20 con una breve camminata dalla fermata vicina; dall'aeroporto Teniente Luis Candelaria (BRC), di solito si raggiunge prima la città e poi si cambia sulla Línea 20, si partecipa a un tour di mezza giornata del Circuito Chico oppure si prosegue direttamente con auto a noleggio o taxi/remis.`,
+        es: `Desde el centro de Bariloche, las opciones más sencillas son ir en auto, taxi/remis, bicicleta por la RP77 pavimentada, o tomar la Línea 20 y caminar desde una parada cercana; desde el aeropuerto Teniente Luis Candelaria (BRC), la mayoría primero llega al centro y luego combina con la Línea 20, se suma a un tour de medio día por el Circuito Chico o sigue directamente en auto de alquiler o taxi/remis.`,
       } as T,
     },
     {
@@ -257,7 +257,7 @@ export const leaveNoTrace = {
         zh: `巴塔哥尼亚夏季极易发生森林大火。观景台周边绝对禁止吸烟、生火或使用明火；哪怕一个烟头也可能引燃整片山林。`,
         en: `Patagonian summers are extremely fire-prone. Absolutely no smoking, fires or open flames around the viewpoint — even a single cigarette end can ignite the whole forest.`,
         it: `Le estati patagoniche sono molto soggette agli incendi. Vietato fumare, accendere fuochi o fiamme libere vicino al mirador: anche un solo mozzicone può incendiare tutto il bosco.`,
-        es: `Los veranos patagónicos son muy propensos a incendios. Está totalmente prohibido fumar, hacer fuego o usar llama abierta cerca del mirador: una sola colilla puede incendiar todo el bosco.`,
+        es: `Los veranos patagónicos son muy propensos a incendios. Está totalmente prohibido fumar, hacer fuego o usar llama abierta cerca del mirador: una sola colilla puede incendiar todo el bosque.`,
       } as T,
     },
     {
@@ -287,7 +287,7 @@ export const leaveNoTrace = {
         zh: `黄昏是摄影与静享的时刻。请收起外放音响，将交谈降到最低，让每个人都能听见风穿过森林的声音。`,
         en: `Dusk is for photography and quiet enjoyment. Put away speakers, lower your voice, and let everyone hear the wind move through the forest.`,
         it: `Il tramonto è per fotografare e godersi in quiete. Metti via gli altoparlanti, abbassa la voce e lascia che tutti sentano il vento nel bosco.`,
-        es: `El atardecer es para fotografiar y disfrutar en silencio. Guarde los parlantes, baje la voz y deje que todos oigan el viento en el bosco.`,
+        es: `El atardecer es para fotografiar y disfrutar en silencio. Guarde los parlantes, baje la voz y deje que todos oigan el viento en el bosque.`,
       } as T,
     },
     {
@@ -309,49 +309,35 @@ export const leaveNoTrace = {
   } as T,
 };
 
-// ── Partners ──
+// ── Public Sources ──
 export const partners = {
   heading: {
-    zh: `巴里洛切与阿根廷官方旅游伙伴`,
-    en: `Official Bariloche & Argentina Tourism Partners`,
-    it: `Partner ufficiali del turismo di Bariloche e Argentina`,
-    es: `Socios oficiales de turismo de Bariloche y Argentina`,
+    zh: `公共信息核验来源`,
+    en: `Public Information Sources`,
+    it: `Fonti pubbliche di verifica`,
+    es: `Fuentes publicas de verificacion`,
   } as T,
   items: [
     {
-      name: { zh: `巴里洛切市官方旅游局网站（Bariloche Turismo）`, en: `Bariloche Turismo (Official City Tourism Board)`, it: `Bariloche Turismo (Ente ufficiale del turismo cittadino)`, es: `Bariloche Turismo (Órgano Oficial de Turismo de la Ciudad)` } as T,
-      url: 'https://barilocheturismo.gob.ar',
-      abbr: 'BT',
-      note: { zh: `巴里洛切官方旅游推广机构（EMPROTUR）`, en: `Bariloche's official tourism promotion agency (EMPROTUR)`, it: `Ente ufficiale di promozione turistica di Bariloche (EMPROTUR)`, es: `Órgano oficial de promoción turística de Bariloche (EMPROTUR)` } as T,
-      attr: { zh: `巴里洛切官方旅游推广机构（EMPROTUR）的网站，提供关于城市交通、天气、住宿以及各大景点的权威官方指南。`, en: `The website of Bariloche's official tourism promotion agency (EMPROTUR), providing authoritative official guides on city transport, weather, accommodation and major attractions.`, it: `Il sito dell'ente ufficiale di promozione turistica di Bariloche (EMPROTUR), con guide ufficiali e autorevoli su trasporto urbano, clima, alloggio e principali attrazioni.`, es: `El sitio del órgano oficial de promoción turística de Bariloche (EMPROTUR), con guías oficiales y autorizadas sobre transporte urbano, clima, hospedaje y principales atracciones.` } as T,
-    },
-    {
-      name: { zh: `巴里洛切"小环线"专属官方介绍页（Circuito Chico Oficial）`, en: `Circuito Chico Official Page`, it: `Pagina ufficiale del Circuito Chico`, es: `Página Oficial del Circuito Chico` } as T,
+      name: { zh: `Circuito Chico 官方路线信息页`, en: `Circuito Chico official route page`, it: `Pagina ufficiale del percorso Circuito Chico`, es: `Pagina oficial de la ruta Circuito Chico` } as T,
       url: 'https://barilocheturismo.gob.ar/es/circuito-chico',
-      abbr: 'CC',
-      note: { zh: `官方"小环线"专属页面`, en: `Official "Circuito Chico" page`, it: `Pagina ufficiale del "Circuito Chico"`, es: `Página oficial del "Circuito Chico"` } as T,
-      attr: { zh: `官方旅游局针对"小环线（Circuito Chico）"设立的专门页面，详细介绍了从市中心出发的路线、距离、建议游览时间以及包含 Punto Panorámico 在内的各个观景点。`, en: `The official tourism board's dedicated page for the "Circuito Chico" (Small Circuit), detailing the route from downtown, distances, suggested visiting time, and the various viewpoints including Punto Panorámico.`, it: `La pagina dedicata dell'ente del turismo al "Circuito Chico" (Piccolo Circuito), con il dettaglio del percorso dal centro, distanze, tempo suggerito e i vari miradores, incluso il Punto Panorámico.`, es: `La página dedicada de la oficina de turismo al "Circuito Chico", con detalle de la ruta desde el centro, distancias, tiempo sugerido y los distintos miradores, incluido el Punto Panorámico.` } as T,
+      abbr: 'BT',
+      note: { zh: `路线与公共交通核验`, en: `Route and transit verification`, it: `Verifica di percorso e trasporto pubblico`, es: `Verificacion de ruta y transporte publico` } as T,
+      attr: { zh: `用于核验小环线的路线、距离与公共交通信息；仅作为公共信息来源，不构成任何商业推荐。`, en: `Used to verify route, distance and public-transit information for Circuito Chico; provided as a public source only, not as a commercial endorsement.`, it: `Usata per verificare percorso, distanze e trasporto pubblico del Circuito Chico; fornita solo come fonte pubblica, non come raccomandazione commerciale.`, es: `Se usa para verificar ruta, distancias y transporte publico del Circuito Chico; se ofrece solo como fuente publica, no como recomendacion comercial.` } as T,
     },
     {
       name: { zh: `纳韦尔瓦皮国家公园（Parque Nacional Nahuel Huapi）`, en: `Nahuel Huapi National Park`, it: `Parco Nazionale Nahuel Huapi`, es: `Parque Nacional Nahuel Huapi` } as T,
       url: 'https://www.argentina.gob.ar/parquesnacionales/nahuelhuapi',
       abbr: 'PNH',
-      note: { zh: `阿根廷国家公园管理局`, en: `Argentina's National Parks Administration`, it: `Amministrazione dei Parchi Nazionali dell'Argentina`, es: `Administración de Parques Nacionales de Argentina` } as T,
-      attr: { zh: `小环线和该观景台位于阿根廷著名的纳韦尔瓦皮国家公园保护区内。这是阿根廷国家公园管理局的官方页面，提供生态保护、徒步路线和安全注意事项。`, en: `The Small Circuit and this viewpoint lie within Argentina's renowned Nahuel Huapi National Park. This is the official page of Argentina's National Parks Administration, providing ecological protection, hiking routes and safety guidance.`, it: `Il Circuito Chico e questo mirador si trovano dentro il celebre Parco Nazionale Nahuel Huapi dell'Argentina. Questa è la pagina ufficiale dell'Amministrazione dei Parchi Nazionali, con protezione ecologica, sentieri e sicurezza.`, es: `El Circuito Chico y este mirador están dentro del famoso Parque Nacional Nahuel Huapi de Argentina. Esta es la página oficial de la Administración de Parques Nacionales, con protección ecológica, senderos y seguridad.` } as T,
-    },
-    {
-      name: { zh: `阿根廷国家旅游局 — 内格罗河省专页（Visit Argentina）`, en: `Visit Argentina — Río Negro Page`, it: `Visit Argentina — Pagina di Río Negro`, es: `Visit Argentina — Página de Río Negro` } as T,
-      url: 'https://www.argentina.travel/es/pr/rio-negro',
-      abbr: 'INPROTUR',
-      note: { zh: `阿根廷国家旅游局（INPROTUR）`, en: `Argentina's National Tourism Board (INPROTUR)`, it: `Ente nazionale del turismo argentino (INPROTUR)`, es: `Órgano Nacional de Turismo de Argentina (INPROTUR)` } as T,
-      attr: { zh: `阿根廷国家旅游局（INPROTUR）面向全球游客的官方推广网站，该专页详细介绍了景点所在的内格罗河省（Río Negro）的自然风光与旅游资源。`, en: `The official promotional website of Argentina's National Tourism Board (INPROTUR) for global travellers; this page details the natural scenery and tourism resources of Río Negro province, where the attraction is located.`, it: `Il sito ufficiale di promozione dell'ente nazionale del turismo argentino (INPROTUR) per i viaggiatori di tutto il mondo; questa pagina illustra i paesaggi e le risorse turistiche della provincia di Río Negro, dove si trova l'attrazione.`, es: `El sitio oficial de promoción del órgano nacional de turismo de Argentina (INPROTUR) para viajeros del mundo; esta página detalla los paisajes y recursos turísticos de la provincia de Río Negro, donde está el atractivo.` } as T,
+      note: { zh: `生态与安全公告`, en: `Ecology and safety notices`, it: `Avvisi ecologici e di sicurezza`, es: `Avisos de ecologia y seguridad` } as T,
+      attr: { zh: `用于核验国家公园范围、生态保护要求与安全注意事项；为公共机构信息，不构成推荐。`, en: `Used to verify park boundaries, ecological protection rules and safety notices; this is public-agency information, not a recommendation.`, it: `Usata per verificare confini del parco, regole ecologiche e avvisi di sicurezza; si tratta di informazione pubblica, non di una raccomandazione.`, es: `Se usa para verificar limites del parque, normas ecologicas y avisos de seguridad; es informacion publica, no una recomendacion.` } as T,
     },
     {
       name: { zh: `圣卡洛斯-德巴里洛切市政府官网（Municipalidad）`, en: `Municipality of San Carlos de Bariloche`, it: `Comune di San Carlos de Bariloche`, es: `Municipalidad de San Carlos de Bariloche` } as T,
       url: 'https://www.bariloche.gov.ar/',
       abbr: 'MUNI',
-      note: { zh: `圣卡洛斯-德巴里洛切市政府`, en: `Municipality of San Carlos de Bariloche`, it: `Comune di San Carlos de Bariloche`, es: `Municipalidad de San Carlos de Bariloche` } as T,
-      attr: { zh: `当地市政府官方网站，负责城市公共设施（包括观景台基础设施、路况）的管理与维护，可查询当地最新的政务和市政公告。`, en: `The official website of the local municipal government, responsible for managing and maintaining city public facilities (including viewpoint infrastructure and road conditions), where you can find the latest local government and municipal announcements.`, it: `Il sito ufficiale del governo comunale locale, responsabile della gestione e manutenzione delle strutture pubbliche cittadine (inclusa l'infrastruttura del mirador e lo stato delle strade), dove trovare gli ultimi annunci comunali.`, es: `El sitio oficial del gobierno municipal local, responsable de gestionar y mantener instalaciones públicas (incluida la infraestructura del mirador y el estado de las rutas), donde encuentra los anuncios locales más recientes.` } as T,
+      note: { zh: `市政与路况公告`, en: `Municipal and road notices`, it: `Avvisi comunali e viabilita`, es: `Avisos municipales y viales` } as T,
+      attr: { zh: `用于核验当地市政公告、公共设施维护与路况信息；仅供公共信息查阅。`, en: `Used to verify municipal notices, public-facility maintenance and road conditions; provided only for public reference.`, it: `Usata per verificare avvisi comunali, manutenzione delle strutture pubbliche e condizioni stradali; fornita solo come riferimento pubblico.`, es: `Se usa para verificar avisos municipales, mantenimiento de instalaciones publicas y estado de rutas; se ofrece solo como referencia publica.` } as T,
     },
   ],
 };
@@ -362,6 +348,7 @@ export const footer = {
   address: { zh: `Punto Panorámico · 小环线 RP77 · 圣卡洛斯-德巴里洛切，阿根廷`, en: `Punto Panorámico · Circuito Chico RP77 · San Carlos de Bariloche, Argentina`, it: `Punto Panorámico · Circuito Chico RP77 · San Carlos de Bariloche, Argentina`, es: `Punto Panorámico · Circuito Chico RP77 · San Carlos de Bariloche, Argentina` } as T,
   copyright: { zh: `© 2026 miradorchico · 保留所有权利。`, en: `© 2026 miradorchico. All rights reserved.`, it: `© 2026 miradorchico. Tutti i diritti riservati.`, es: `© 2026 miradorchico. Todos los derechos reservados.` } as T,
   disclaimer: { zh: `本网站是一个独立的第三方自然教育项目，与任何政府机构、景点运营方或商业机构均无关联。`, en: `This website is an independent third-party nature-education project. We are not affiliated with any government agency, attraction operator or commercial entity.`, it: `Questo sito è un progetto indipendente di educazione naturalistica di terze parti. Non è affiliato a nessun ente governativo, gestore di attrazioni o entità commerciale.`, es: `Este sitio es un proyecto independiente de educación natural de terceros. No estamos afiliados a ningún organismo gubernamental, operador de atracciones o entidad comercial.` } as T,
+  sourcesNote: { zh: `下列外部链接仅用于公共信息核验，不构成景点、服务或机构的商业推荐。`, en: `The external links below are provided only for public-information verification and do not constitute commercial recommendations of any attraction, service or institution.`, it: `I link esterni qui sotto sono forniti solo per la verifica di informazioni pubbliche e non costituiscono raccomandazioni commerciali di attrazioni, servizi o istituzioni.`, es: `Los enlaces externos de abajo se ofrecen solo para verificar informacion publica y no constituyen recomendaciones comerciales de ningun atractivo, servicio o institucion.` } as T,
   privacy: { zh: `隐私政策`, en: `Privacy Policy`, it: `Informativa sulla privacy`, es: `Política de Privacidad` } as T,
   terms: { zh: `服务条款`, en: `Terms of Service`, it: `Termini di servizio`, es: `Términos del Servicio` } as T,
   cookies: { zh: `Cookie 设置`, en: `Cookie Settings`, it: `Impostazioni cookie`, es: `Configuración de Cookies` } as T,

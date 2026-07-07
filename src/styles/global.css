@@ -34,6 +34,3 @@ details[open] .faq-plus { transform: rotate(45deg); }
 body[data-mode="tourist"] .science-only { display: none !important; }
 body[data-mode="science"] .tourist-only { display: none !important; }
 .num-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; }
-/* Partner links */
-.partner-abbr { font-variant: small-caps; letter-spacing: 0.15em; }
-.partner-link:hover .partner-name { opacity: 1; transform: translateY(4px); }
