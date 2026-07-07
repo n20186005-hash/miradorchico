@@ -3,10 +3,10 @@ import type { Lang } from '../i18n/utils';
 import { gallery } from '../i18n/translations';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
-const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
 const idx = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 const imgs = idx.map(n => `/gallery/punto-panoramico-circuito-chico-${n}.jpg`);
-const gmapsUrl = 'https://maps.app.goo.gl/7mpNnhQ9kcnKLj4r9';
+const gmapsUrl = 'https://www.google.com/maps/search/?api=1&query=Punto%20Panor%C3%A1mico%20Bariloche';
 const bento = [
   'col-span-8 row-span-2 aspect-[16/10]','col-span-4 aspect-square','col-span-4 aspect-square',
   'md:col-span-4 col-span-6 aspect-[4/3]','md:col-span-4 col-span-6 aspect-[4/3]','md:col-span-4 col-span-12 aspect-[4/3]',
@@ -25,7 +25,7 @@ const bento = [
     <div class="grid grid-cols-12 gap-3 md:gap-4">
       {imgs.map((src, i) => (
         <figure class={`${bento[i] || 'col-span-6 aspect-[4/3]'} rounded-2xl overflow-hidden`}>
-          <img loading="lazy" alt={`Buracona — Blue Eye Cave — gallery photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
+          <img loading="lazy" alt={`Punto Panorámico — Bariloche — gallery photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
         </figure>
       ))}
     </div>

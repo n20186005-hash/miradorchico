@@ -1,7 +1,7 @@
-export const LANGUAGES = ['zh', 'en', 'cri', 'pt'] as const;
+export const LANGUAGES = ['zh', 'en', 'it', 'es'] as const;
 export type Lang = (typeof LANGUAGES)[number];
-export const DEFAULT_LANG: Lang = 'pt';
-export const LANG_LABELS: Record<Lang, string> = { zh: '中', en: 'EN', cri: 'CV', pt: 'PT' };
+export const DEFAULT_LANG: Lang = 'es';
+export const LANG_LABELS: Record<Lang, string> = { zh: '中', en: 'EN', it: 'IT', es: 'ES' };
 
 export function getLangFromUrl(url: URL): Lang {
   const seg = url.pathname.split('/')[1];

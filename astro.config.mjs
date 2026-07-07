@@ -3,10 +3,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://buracona.com',
+  site: 'https://miradorchico.com',
   i18n: {
-    defaultLocale: 'pt',
-    locales: ['zh', 'en', 'cri', 'pt'],
+    defaultLocale: 'es',
+    locales: ['zh', 'en', 'it', 'es'],
     routing: {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: false,

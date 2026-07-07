@@ -3,12 +3,14 @@ import type { Lang } from '../i18n/utils';
 import { climate } from '../i18n/translations';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
-const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
-const LAT = 16.7519, LNG = -22.9375, TZ = 'Atlantic/Cape_Verde';
-const LOCALE = lang === 'zh' ? 'zh-CN' : (lang === 'pt' || lang === 'cri') ? 'pt-PT' : 'en-US';
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
+const LAT = -41.1233, LNG = -71.3472, TZ = 'America/Argentina/Buenos_Aires';
+const LOCALE = lang === 'zh' ? 'zh-CN' : (lang === 'it' ? 'it-IT' : (lang === 'es' ? 'es-AR' : 'en-US'));
 const labels = {
-  rising: _(climate.rising), falling: _(climate.falling),
-  nextHigh: _(climate.nextHigh), nextLow: _(climate.nextLow),
+  wind: _(climate.windLabel), direction: _(climate.directionLabel), gust: _(climate.gustLabel),
+  sunset: _(climate.sunsetLabel), golden: _(climate.goldenHourLabel), goldenDesc: _(climate.goldenHourDesc),
+  timeline: _(climate.timelineLabel), timelineDesc: _(climate.timelineDesc),
+  time: _(climate.timelineTime), glow: _(climate.timelineGlow), best: _(climate.timelineBest),
   loading: _(climate.loading), error: _(climate.error),
 };
 ---
@@ -19,110 +21,118 @@ const labels = {
       <h2 class="font-display text-4xl md:text-6xl mt-4" set:html={_(climate.heading)} />
       <p class="mt-6 text-[color:var(--color-moss)]/80">{_(climate.subtitle)}</p>
     </div>
+
     <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <!-- Wind card -->
       <div class="rounded-3xl bg-white p-8 border border-black/5 text-center">
-        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(climate.sunsetLabel)}</div>
-        <div class="num-display text-5xl mt-3" id="ct-sun">—</div>
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{labels.wind}</div>
+        <div class="num-display text-5xl mt-3" id="ct-wind">—</div>
+        <div class="mt-3 flex items-center justify-center gap-3 text-sm text-[color:var(--color-moss)]/70">
+          <span id="ct-dir-arrow" class="inline-block text-lg">↑</span>
+          <span id="ct-dir">—</span>
+        </div>
+        <div class="text-sm text-[color:var(--color-moss)]/60 mt-1" id="ct-gust">—</div>
       </div>
+      <!-- Sunset card -->
       <div class="rounded-3xl bg-white p-8 border border-black/5 text-center">
-        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(climate.tideLabel)}</div>
-        <div class="num-display text-5xl mt-3" id="ct-tide">—</div>
-        <div class="text-sm text-[color:var(--color-moss)]/70 mt-2" id="ct-tide-sub">—</div>
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{labels.sunset}</div>
+        <div class="num-display text-5xl mt-3" id="ct-sun">—</div>
+        <div class="text-sm text-[color:var(--color-moss)]/70 mt-2" id="ct-gold">—</div>
+        <div class="text-xs text-[color:var(--color-moss)]/50 mt-2">{labels.golden}: {labels.goldenDesc}</div>
       </div>
     </div>
+
+    <!-- Golden hour timeline -->
     <div class="mt-6 max-w-3xl mx-auto rounded-3xl bg-white p-8 border border-black/5">
-      <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(climate.timelineLabel)}</div>
-      <p class="mt-2 text-sm text-[color:var(--color-moss)]/70">{_(climate.timelineDesc)}</p>
+      <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{labels.timeline}</div>
+      <p class="mt-2 text-sm text-[color:var(--color-moss)]/70">{labels.timelineDesc}</p>
       <div class="mt-6 grid md:grid-cols-[1fr,220px] gap-8 items-center">
         <div>
           <div class="flex items-center justify-between gap-4 text-xs text-[color:var(--color-moss)]/70 flex-wrap">
-            <span>{_(climate.timelineTime)}: <span class="num-display" id="ct-time">12:00</span></span>
-            <span class="text-[color:var(--color-emerald)]">{_(climate.timelineBest)}</span>
+            <span>{labels.time}: <span class="num-display" id="ct-time">—</span></span>
+            <span class="text-[color:var(--color-emerald)]">{labels.best}</span>
           </div>
-          <input id="ct-slider" type="range" min="8" max="16" step="0.25" value="12" class="w-full mt-4 accent-[color:var(--color-emerald)]" />
+          <input id="ct-slider" type="range" min="8" max="20" step="0.25" value="20" class="w-full mt-4 accent-[color:var(--color-emerald)]" />
           <div class="mt-4 h-2 rounded-full bg-[color:var(--color-mist)] overflow-hidden">
             <div id="ct-fill" class="h-full bg-[color:var(--color-emerald)]" style="width:50%"></div>
           </div>
-          <div class="mt-3 text-xs text-[color:var(--color-moss)]/70">{_(climate.timelineGlow)}: <span class="num-display" id="ct-glow">100%</span></div>
+          <div class="mt-3 text-xs text-[color:var(--color-moss)]/70">{labels.glow}: <span class="num-display" id="ct-glow">0%</span></div>
         </div>
         <div class="flex items-center justify-center">
-          <div id="ct-eye" class="w-44 h-44 rounded-full border border-black/10 overflow-hidden"></div>
+          <div id="ct-disc" class="w-44 h-44 rounded-full border border-black/10 overflow-hidden"></div>
         </div>
       </div>
     </div>
+
     <div class="mt-6 text-center text-xs text-[color:var(--color-moss)]/50">{_(climate.source)}</div>
   </div>
 </section>
 
 <script define:vars={{ LAT, LNG, TZ, LOCALE, labels }}>
-  (async () => {
-    const sunEl = document.getElementById('ct-sun');
-    const tideEl = document.getElementById('ct-tide');
-    const subEl = document.getElementById('ct-tide-sub');
-    const fmt = (iso) => new Date(iso).toLocaleTimeString(LOCALE, { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
-    try {
-      const [sunRes, tideRes] = await Promise.all([
-        fetch(`https://api.sunrise-sunset.org/json?lat=${LAT}&lng=${LNG}&formatted=0`),
-        fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${LAT}&longitude=${LNG}&hourly=sea_level_height_msl&timezone=${encodeURIComponent(TZ)}`),
-      ]);
-      const sun = await sunRes.json();
-      const tide = await tideRes.json();
-      const sunset = new Date(sun.results.sunset).toLocaleTimeString(LOCALE, { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
-      const times = tide.hourly.time, vals = tide.hourly.sea_level_height_msl;
-      const now = Date.now();
-      let idx = 0, best = Infinity;
-      for (let i = 0; i < times.length; i++) {
-        const d = Math.abs(new Date(times[i]).getTime() - now);
-        if (d < best) { best = d; idx = i; }
-      }
-      const cur = vals[idx];
-      const rising = vals[idx + 1] > cur;
-      let hi = null, lo = null;
-      for (let i = Math.max(1, idx); i < times.length - 1; i++) {
-        if (hi === null && vals[i] >= vals[i - 1] && vals[i] > vals[i + 1]) hi = fmt(times[i]);
-        if (lo === null && vals[i] <= vals[i - 1] && vals[i] < vals[i + 1]) lo = fmt(times[i]);
-        if (hi !== null && lo !== null) break;
-      }
-      sunEl.textContent = sunset;
-      tideEl.textContent = cur.toFixed(2) + ' m';
-      subEl.textContent = `${rising ? labels.rising : labels.falling} · ${labels.nextHigh} ${hi || '—'} · ${labels.nextLow} ${lo || '—'}`;
-    } catch (e) {
-      sunEl.textContent = labels.error;
-      tideEl.textContent = '';
-      subEl.textContent = '';
-    }
-  })();
-
   (() => {
-    const slider = document.getElementById('ct-slider');
-    const timeEl = document.getElementById('ct-time');
-    const glowEl = document.getElementById('ct-glow');
-    const fillEl = document.getElementById('ct-fill');
-    const eyeEl = document.getElementById('ct-eye');
-    if (!slider || !timeEl || !glowEl || !fillEl || !eyeEl) return;
+    const $ = (id) => document.getElementById(id);
+    const windEl = $('ct-wind'), dirEl = $('ct-dir'), arrowEl = $('ct-dir-arrow'),
+          gustEl = $('ct-gust'), sunEl = $('ct-sun'), goldEl = $('ct-gold'),
+          slider = $('ct-slider'), timeEl = $('ct-time'), glowEl = $('ct-glow'),
+          fillEl = $('ct-fill'), discEl = $('ct-disc');
     const clamp01 = (v) => Math.max(0, Math.min(1, v));
-    const fmtHM = (h) => {
-      const hh = Math.floor(h);
-      const mm = Math.round((h - hh) * 60);
-      return String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
+    const compass = (deg) => {
+      const dirs = ['N','NE','E','SE','S','SW','W','NW'];
+      return dirs[Math.round(deg / 45) % 8];
     };
-    const intensityAt = (h) => {
-      const d = Math.abs(h - 12) / 4;
-      return clamp01(Math.cos(Math.min(1, d) * Math.PI / 2));
-    };
-    const render = () => {
+    const fmtHM = (d) => new Date(d).toLocaleTimeString(LOCALE, { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
+    const fmtH = (h) => { const hh = Math.floor(h); const mm = Math.round((h - hh) * 60); return String(hh).padStart(2,'0') + ':' + String(mm).padStart(2,'0'); };
+
+    let sunriseH = 8, sunsetH = 20;
+
+    const renderGlow = () => {
       const h = parseFloat(slider.value);
-      const x = (h - 8) / 8;
-      const intensity = intensityAt(h);
-      timeEl.textContent = fmtHM(h);
-      glowEl.textContent = Math.round(intensity * 100) + '%';
-      fillEl.style.width = Math.round(x * 100) + '%';
-      const blueA = 0.18 + intensity * 0.62;
-      const sunA = 0.08 + intensity * 0.16;
-      eyeEl.style.backgroundImage = `radial-gradient(circle at 35% 30%, rgba(232,177,75,${sunA}) 0%, rgba(47,107,78,0.10) 35%, rgba(0,120,255,${blueA}) 70%, rgba(237,243,239,1) 100%)`;
-      eyeEl.style.boxShadow = `inset 0 0 0 10px rgba(11,31,26,0.03), 0 18px 40px -26px rgba(11,31,26,0.35)`;
+      const x = (h - sunriseH) / Math.max(0.1, (sunsetH - sunriseH));
+      // Golden glow ramps up strongly in the last 90 minutes before sunset.
+      const glow = clamp01((h - (sunsetH - 1.5)) / 1.5);
+      timeEl.textContent = fmtH(h);
+      glowEl.textContent = Math.round(glow * 100) + '%';
+      fillEl.style.width = Math.round(clamp01(x) * 100) + '%';
+      const warm = 0.15 + glow * 0.7;
+      discEl.style.backgroundImage =
+        `radial-gradient(circle at 50% 62%, rgba(232,177,75,${0.25 + glow * 0.6}) 0%, rgba(47,107,78,0.12) 38%, rgba(244,196,120,${warm}) 68%, rgba(237,243,239,1) 100%)`;
+      discEl.style.boxShadow = `inset 0 0 0 10px rgba(11,31,26,0.03), 0 18px 40px -26px rgba(11,31,26,0.35)`;
     };
-    slider.addEventListener('input', render);
-    render();
+
+    (async () => {
+      slider.addEventListener('input', renderGlow);
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LNG}` +
+          `&current=wind_speed_10m,wind_direction_10m,wind_gusts_10m&daily=sunrise,sunset&timezone=auto&wind_speed_unit=kmh`;
+        const res = await fetch(url);
+        const d = await res.json();
+        const cur = d.current;
+        windEl.textContent = Math.round(cur.wind_speed_10m) + ' km/h';
+        const deg = Math.round(cur.wind_direction_10m);
+        dirEl.textContent = compass(deg) + ' · ' + deg + '°';
+        arrowEl.style.transform = `rotate(${deg}deg)`;
+        gustEl.textContent = labels.gust + ': ' + Math.round(cur.wind_gusts_10m) + ' km/h';
+
+        const sunsetISO = d.daily.sunset[0];
+        const sunset = fmtHM(new Date(sunsetISO));
+        const goldStart = fmtHM(new Date(new Date(sunsetISO).getTime() - 60 * 60000));
+        sunEl.textContent = sunset;
+        goldEl.textContent = goldStart + ' – ' + sunset;
+
+        const sr = new Date(d.daily.sunrise[0]);
+        const ss = new Date(sunsetISO);
+        sunriseH = sr.getHours() + sr.getMinutes() / 60;
+        sunsetH = ss.getHours() + ss.getMinutes() / 60;
+        slider.min = String(Math.floor(sunriseH));
+        slider.max = String(Math.ceil(sunsetH));
+        slider.value = String(sunsetH);
+        renderGlow();
+      } catch (e) {
+        windEl.textContent = labels.error;
+        sunEl.textContent = '';
+        goldEl.textContent = '';
+        slider.disabled = true;
+      }
+    })();
   })();
 </script>

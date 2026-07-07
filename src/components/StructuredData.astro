@@ -4,29 +4,28 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 
 const descMap: Record<Lang, string> = {
-  zh: '佛得角萨尔岛帕尔梅拉附近的蓝眼岩洞（Olho Azul/Blue Eye），玄武岩海岸裂隙与海蚀洞形成的潮池系统。正午阳光透入海水，在洞底折射出深邃蓝光。营业时间 09:00–18:00。',
-  en: 'Buracona (Olho Azul / Blue Eye) near Palmeira, Sal, Cape Verde — a basalt sea-cave and tide-pool system where midday sunlight refracts through seawater into an intense blue glow. Open 09:00–18:00.',
-  cri: 'Buracona (Olho Azul / Blue Eye) perto de Palmeira, Sal, Cabo Verde — sistema di gruta di mar i poça di maré na basalto, undi luz di mei-dia ta refrata na água i ta da un azul forte. Abertu 09:00–18:00.',
-  pt: 'Buracona (Olho Azul / Blue Eye) perto de Palmeira, Sal, Cabo Verde — um sistema de gruta marinha e poça de maré em basalto onde a luz do meio-dia se refrata na água e cria um azul intenso. Aberto 09:00–18:00.',
+  zh: 'Punto Panorámico（巴里洛切小环线 RP77）是一处免费、24 小时开放的公共观景台，俯瞰纳韦尔瓦皮湖、劳劳半岛与特罗纳多峰，位于纳韦尔瓦皮国家公园内。',
+  en: 'Punto Panorámico on the Circuito Chico (RP77) in Bariloche — a free, 24-hour public viewpoint overlooking Nahuel Huapi Lake, the Llao Llao peninsula and Cerro Tronador, inside Nahuel Huapi National Park.',
+  es: 'Punto Panorámico en el Circuito Chico (RP77) de Bariloche — un mirador público libre y abierto las 24 h, con vistas al lago Nahuel Huapi, la península de Llao Llao y el Cerro Tronador, dentro del Parque Nacional Nahuel Huapi.',
 };
 
 const tourist = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'TouristAttraction',
-  name: 'Buracona - Blue Eye Cave', description: descMap[lang],
+  name: 'Punto Panorámico - Bariloche Viewpoint', description: descMap[lang],
   image: new URL('/gallery/punto-panoramico-circuito-chico-1.jpg', Astro.site).href,
-  address: { '@type': 'PostalAddress', streetAddress: '', addressLocality: 'Palmeira', addressRegion: 'Sal', postalCode: '', addressCountry: 'CV' },
-  geo: { '@type': 'GeoCoordinates', latitude: 16.7519, longitude: -22.9375 },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.3', reviewCount: '4750' },
-  openingHours: 'Mo-Su 09:00-18:00',
+  address: { '@type': 'PostalAddress', streetAddress: 'Circuito Chico (RP77)', addressLocality: 'San Carlos de Bariloche', addressRegion: 'Río Negro', postalCode: '', addressCountry: 'AR' },
+  geo: { '@type': 'GeoCoordinates', latitude: -41.1233, longitude: -71.3472 },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.6', reviewCount: '2000' },
+  openingHours: 'Mo-Su 00:00-24:00',
 });
 
 const faqData = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Buracona is managed by a local community association; entry is paid and includes a local guide.' } },
-    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'From Santa Maria (~30 km) by taxi / aluguer or rental car; from Amílcar Cabral airport in Espargos (~20 km) by taxi or hired transfer.' } },
-    { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'Around midday for the famous Blue Eye glow, and late afternoon for the "Last Breath of the Sun" (Último Suspiro do Sol) sunset viewpoint.' } },
-    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The ground is sharp, heat-holding basalt — wear sturdy closed shoes, bring water and sun protection, and stay with your guide at all times.' } },
+    { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'No. Punto Panorámico is a free public viewpoint, open 24 hours and unattended. Daylight and dusk offer the best views.' } },
+    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'By car or bike along the paved RP77 Circuito Chico (~12 km from downtown Bariloche); or take the Línea 20 bus and walk from the nearby stop.' } },
+    { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'On a clear day for the blue lake and snow peaks; about 60 minutes before sunset Cerro Tronador glows gold-red — the golden window for photography.' } },
+    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The terrace edge has no railing — keep clear of the drop and watch children. The Andean westerlies are strong, so dress for wind and cold; there are no facilities nearby.' } },
   ],
 });
 ---

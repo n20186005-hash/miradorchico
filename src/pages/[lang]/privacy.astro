@@ -11,7 +11,7 @@ export function getStaticPaths() {
 }
 
 const lang = Astro.params.lang as Lang;
-const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
 ---
 <BaseLayout lang={lang} title={_(privacy.title)} description={_(privacy.title)}>
   <Nav lang={lang} />
@@ -39,7 +39,7 @@ const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
     </section>
 
     <div class="mt-16 pt-8 border-t border-black/10">
-      <a href={`/${lang}/`} class="link-underline text-[color:var(--color-emerald)]">← {_(footer.privacy)} — {lang === 'zh' ? '返回首页' : lang === 'pt' ? 'Voltar ao início' : lang === 'cri' ? 'Voltar ao início' : 'Back to home'}</a>
+      <a href={`/${lang}/`} class="link-underline text-[color:var(--color-emerald)]">← {_(footer.privacy)} — {lang === 'zh' ? '返回首页' : lang === 'it' ? 'Torna alla home' : lang === 'es' ? 'Volver al inicio' : 'Back to home'}</a>
     </div>
   </main>
   <Footer lang={lang} />
