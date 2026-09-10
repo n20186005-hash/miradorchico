@@ -1,0 +1,71 @@
+---
+import type { Lang } from '../i18n/utils';
+import { locationMap } from '../i18n/translations';
+import { ATTRACTION } from '../data/attraction';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
+const coords = `${ATTRACTION.latitude}, ${ATTRACTION.longitude}`;
+---
+<section id="location" class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">{_(locationMap.sectionNum)}</div>
+  <h2 class="font-display text-4xl md:text-6xl mt-4 max-w-4xl" set:html={_(locationMap.heading)} />
+  <p class="mt-6 max-w-3xl text-[color:var(--color-moss)]/80">{_(locationMap.subtitle)}</p>
+
+  <div class="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+    <!-- Google Maps embed -->
+    <div class="lg:col-span-7">
+      <div class="rounded-3xl overflow-hidden border border-black/10 bg-white">
+        <iframe
+          title={_(locationMap.mapTitle)}
+          src={ATTRACTION.mapsEmbedSrc}
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+
+    <!-- NAP details -->
+    <div class="lg:col-span-5">
+      <dl class="rounded-3xl bg-white border border-black/5 p-7 space-y-5">
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.addressLabel)}</dt>
+          <dd class="mt-1 text-sm text-[color:var(--color-moss)]">{_(locationMap.addressValue)}</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.plusCodeLabel)}</dt>
+          <dd class="mt-1 text-sm text-[color:var(--color-moss)]">{ATTRACTION.plusCode}</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.coordsLabel)}</dt>
+          <dd class="mt-1 text-sm text-[color:var(--color-moss)]">{coords}</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.hoursLabel)}</dt>
+          <dd class="mt-1 text-sm text-[color:var(--color-moss)]">{_(locationMap.hoursValue)}</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.directionsLabel)}</dt>
+          <dd class="mt-1 text-sm text-[color:var(--color-moss)]">{_(locationMap.directions)}</dd>
+        </div>
+      </dl>
+
+      <a
+        href={ATTRACTION.mapsShareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-5 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-ink)] text-[color:var(--color-cream)] px-5 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        {_(locationMap.openInMaps)}
+      </a>
+    </div>
+  </div>
+
+  <!-- Authoritative outbound links -->
+  <p class="mt-10 text-sm text-[color:var(--color-moss)]/80 max-w-3xl leading-relaxed" set:html={_(locationMap.officialText)} />
+</section>

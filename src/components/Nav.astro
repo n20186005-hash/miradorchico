@@ -8,8 +8,9 @@ const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || ''
 ---
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-[rgba(247,243,234,.75)] border-b border-black/5">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href={`/${lang}/`} class="flex items-center">
-      <span class="font-display font-semibold tracking-tight">Punto Panorámico · Bariloche</span>
+    <a href={`/${lang}/`} class="flex flex-col leading-tight">
+      <span class="font-display font-semibold tracking-tight">{_(nav.brand)}</span>
+      <span class="hidden sm:block text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-moss)]/60">{_(nav.brandSub)}</span>
     </a>
     <nav class="hidden md:flex items-center gap-7 text-sm text-[color:var(--color-moss)]">
       <a class="link-underline" href={`/${lang}/#manifesto`}>{_(nav.overview)}</a>

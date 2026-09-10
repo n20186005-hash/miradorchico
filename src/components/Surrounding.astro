@@ -5,7 +5,7 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
 ---
-<section class="bg-[color:var(--color-mist)] py-24 md:py-32">
+<section id="surrounding" class="bg-[color:var(--color-mist)] py-24 md:py-32">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">08 — {_(surrounding.sectionNum)}</div>
     <h2 class="font-display text-4xl md:text-6xl mt-4 mb-14 max-w-3xl" set:html={_(surrounding.heading)} />

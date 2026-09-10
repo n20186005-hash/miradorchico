@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# The site is fully crawlable, served over HTTPS and globally accessible.
+Sitemap: https://miradorchico.com/sitemap.xml

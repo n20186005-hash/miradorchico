@@ -1,0 +1,214 @@
+---
+import type { Lang } from '../i18n/utils';
+import { ATTRACTION } from '../data/attraction';
+import { WX_COPY } from '../i18n/weather.copy';
+import {
+  buildWeatherUrl,
+  parseOpenMeteo,
+  evaluateWeather,
+  renderCurrent,
+  renderForecast,
+  renderRisk,
+  renderList,
+  formatUpdated,
+  type WxPayload,
+} from '../lib/weather';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const copy = WX_COPY[lang] ?? WX_COPY.es;
+
+const LAT = ATTRACTION.latitude;
+const LNG = ATTRACTION.longitude;
+const TZ = 'America/Argentina/Buenos_Aires';
+const LOCALE = lang === 'zh' ? 'zh-CN' : lang === 'it' ? 'it-IT' : lang === 'es' ? 'es-AR' : 'en-US';
+
+// Server-side fetch: runs on the build server and is cached as static HTML.
+// The client refreshes it on load, so the page is never stale for long even
+// though the site ships as fully static output.
+let payload: WxPayload | null = null;
+try {
+  const res = await fetch(buildWeatherUrl(LAT, LNG, TZ));
+  if (res.ok) payload = parseOpenMeteo(await res.json());
+} catch {
+  // Offline / rate-limited build: fall back to the client-side fetch.
+}
+
+let currentHtml = `<div class="text-sm text-[color:var(--color-moss)]/60">${copy.ui.loading}</div>`;
+let forecastHtml = '';
+let riskHtml = '';
+let outfitHtml = '';
+let planHtml = '';
+let packHtml = '';
+let updatedHtml = '';
+
+if (payload) {
+  const tmax = payload.days[0]?.tmax ?? payload.now.temp;
+  const tmin = payload.days[0]?.tmin ?? payload.now.temp;
+  const advice = evaluateWeather(payload.now, tmax, tmin, copy);
+  currentHtml = renderCurrent(payload.now, copy);
+  forecastHtml = renderForecast(payload.days, copy, LOCALE);
+  riskHtml = renderRisk(advice, copy);
+  outfitHtml = renderList(advice.outfit);
+  planHtml = renderList(advice.plan);
+  packHtml = renderList(advice.pack);
+  updatedHtml = `${copy.ui.updated} ${formatUpdated(payload.at, LOCALE, TZ)}`;
+}
+---
+
+<section
+  id="weather"
+  class="bg-[color:var(--color-cream)] py-24 md:py-32"
+  data-lang={lang}
+  data-lat={LAT}
+  data-lng={LNG}
+  data-tz={TZ}
+  data-locale={LOCALE}
+>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">{copy.ui.sectionNum}</div>
+      <h2 class="font-display text-4xl md:text-6xl mt-4" set:html={copy.ui.heading} />
+      <p class="mt-6 text-[color:var(--color-moss)]/80">{copy.ui.subtitle}</p>
+    </div>
+
+    <div class="mt-12 max-w-5xl mx-auto space-y-6">
+      <!-- Alerts (rendered only when a real hazard is detected) -->
+      <div id="wx-risk" set:html={riskHtml} />
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Current conditions -->
+        <div class="rounded-3xl bg-white p-8 border border-black/5">
+          <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{copy.ui.current}</div>
+          <div id="wx-current" class="mt-5" set:html={currentHtml} />
+        </div>
+
+        <!-- 7-day forecast -->
+        <div class="rounded-3xl bg-white p-8 border border-black/5">
+          <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{copy.ui.forecastTitle}</div>
+          <div id="wx-forecast" class="mt-3" set:html={forecastHtml} />
+        </div>
+      </div>
+
+      <!-- Actionable advice -->
+      <div class="rounded-3xl bg-white p-8 border border-black/5">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{copy.ui.adviceTitle}</div>
+          <div class="flex items-center gap-1 text-xs bg-[color:var(--color-mist)] rounded-full p-1" id="wx-tabs">
+            <button type="button" class="wx-tab active px-3.5 py-1.5 rounded-full" data-tab="outfit">{copy.ui.tabOutfit}</button>
+            <button type="button" class="wx-tab px-3.5 py-1.5 rounded-full" data-tab="plan">{copy.ui.tabPlan}</button>
+            <button type="button" class="wx-tab px-3.5 py-1.5 rounded-full" data-tab="pack">{copy.ui.tabPack}</button>
+          </div>
+        </div>
+        <div class="mt-6">
+          <div id="wx-outfit" data-panel="outfit" set:html={outfitHtml} />
+          <div id="wx-plan" data-panel="plan" hidden set:html={planHtml} />
+          <div id="wx-pack" data-panel="pack" hidden set:html={packHtml} />
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-[color:var(--color-moss)]/50">
+        <span>{copy.ui.source}</span>
+        <span id="wx-updated">{updatedHtml}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { WX_COPY } from '../i18n/weather.copy';
+  import {
+    buildWeatherUrl,
+    parseOpenMeteo,
+    evaluateWeather,
+    renderCurrent,
+    renderForecast,
+    renderRisk,
+    renderList,
+    formatUpdated,
+  } from '../lib/weather';
+
+  const root = document.getElementById('weather');
+  if (root) {
+    const lang = (root.dataset.lang || 'es') as keyof typeof WX_COPY;
+    const copy = WX_COPY[lang] ?? WX_COPY.es;
+    const LAT = Number(root.dataset.lat);
+    const LNG = Number(root.dataset.lng);
+    const TZ = root.dataset.tz || 'America/Argentina/Buenos_Aires';
+    const LOCALE = root.dataset.locale || 'es-AR';
+
+    const CACHE_KEY = 'miradorchico:wx:v1';
+    const TTL = 30 * 60 * 1000; // 30 minutes
+
+    const $ = (id: string) => document.getElementById(id);
+    const slots = {
+      current: $('wx-current'),
+      forecast: $('wx-forecast'),
+      risk: $('wx-risk'),
+      outfit: $('wx-outfit'),
+      plan: $('wx-plan'),
+      pack: $('wx-pack'),
+      updated: $('wx-updated'),
+    };
+
+    const render = (payload) => {
+      const tmax = payload.days[0]?.tmax ?? payload.now.temp;
+      const tmin = payload.days[0]?.tmin ?? payload.now.temp;
+      const advice = evaluateWeather(payload.now, tmax, tmin, copy);
+      if (slots.current) slots.current.innerHTML = renderCurrent(payload.now, copy);
+      if (slots.forecast) slots.forecast.innerHTML = renderForecast(payload.days, copy, LOCALE);
+      if (slots.risk) slots.risk.innerHTML = renderRisk(advice, copy);
+      if (slots.outfit) slots.outfit.innerHTML = renderList(advice.outfit);
+      if (slots.plan) slots.plan.innerHTML = renderList(advice.plan);
+      if (slots.pack) slots.pack.innerHTML = renderList(advice.pack);
+      if (slots.updated) slots.updated.textContent = `${copy.ui.updated} ${formatUpdated(payload.at, LOCALE, TZ)}`;
+    };
+
+    const readCache = () => {
+      try {
+        const raw = localStorage.getItem(CACHE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        return parsed && parsed.now && Array.isArray(parsed.days) ? parsed : null;
+      } catch {
+        return null;
+      }
+    };
+    const writeCache = (payload) => {
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify(payload)); } catch {}
+    };
+
+    // Tabs
+    const tabs = $('wx-tabs');
+    if (tabs) {
+      tabs.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('button[data-tab]');
+        if (!btn) return;
+        const name = btn.getAttribute('data-tab');
+        tabs.querySelectorAll('button[data-tab]').forEach((b) => b.classList.toggle('active', b === btn));
+        root.querySelectorAll<HTMLElement>('[data-panel]').forEach((p) => {
+          p.hidden = p.getAttribute('data-panel') !== name;
+        });
+      });
+    }
+
+    const cached = readCache();
+    if (cached) render(cached);
+
+    const fresh = cached && Date.now() - (cached.at || 0) < TTL;
+    if (!fresh) {
+      fetch(buildWeatherUrl(LAT, LNG, TZ))
+        .then((res) => (res.ok ? res.json() : Promise.reject(new Error('bad response'))))
+        .then((raw) => {
+          const payload = parseOpenMeteo(raw);
+          writeCache(payload);
+          render(payload);
+        })
+        .catch(() => {
+          if (!cached && slots.current) {
+            slots.current.innerHTML = `<div class="text-sm text-[color:var(--color-moss)]/60">${copy.ui.error}</div>`;
+          }
+        });
+    }
+  }
+</script>

@@ -220,10 +220,55 @@ export const faq = {
     {
       q: { zh: `参观安全吗？`, en: `Is it safe to visit?`, it: `È sicuro visitarlo?`, es: `¿Es seguro visitar?` } as T,
       a: {
-        zh: `台地临崖<strong>无护栏</strong>，请与边缘保持距离、看好儿童；安第斯西风强劲，注意防风保暖；周边无任何设施，请自备饮水与食物，并带走所有垃圾。`,
-        en: `The terrace edge has <strong>no railing</strong> — keep clear of the drop and watch children; the Andean westerlies are strong, so dress for wind and cold; there are no facilities nearby, so bring water and food and carry out all litter.`,
-        it: `Il bordo della terrazza <strong>non ha ringhiera</strong>: resta lontano dal vuoto e sorveglia i bambini; il vento occidentale andino è forte, vestiti per il vento e il freddo; non ci sono servizi vicino, porta acqua e cibo e porta via i rifiuti.`,
-        es: `El borde de la terraza <strong>no tiene baranda</strong>: manténgase lejos del vacío y vigile a los niños; el viento oeste andino es fuerte, así que abríguese; no hay servicios cercanos, traiga agua y comida y lleve su basura.`,
+        zh: `台地临崖<strong>无护栏</strong>，请与边缘保持距离、看好儿童；安第斯西风强劲，注意防风保暖；台地上没有任何设施，请自备饮水与食物，并带走所有垃圾。`,
+        en: `The terrace edge has <strong>no railing</strong> — keep clear of the drop and watch children; the Andean westerlies are strong, so dress for wind and cold; the terrace itself has no facilities, so bring water and food and carry out all litter.`,
+        it: `Il bordo della terrazza <strong>non ha ringhiera</strong>: resta lontano dal vuoto e sorveglia i bambini; il vento occidentale andino è forte, vestiti per il vento e il freddo; la terrazza non ha servizi, porta acqua e cibo e porta via i rifiuti.`,
+        es: `El borde de la terraza <strong>no tiene baranda</strong>: manténgase lejos del vacío y vigile a los niños; el viento oeste andino es fuerte, así que abríguese; la terraza no tiene servicios, traiga agua y comida y lleve su basura.`,
+      } as T,
+    },
+    {
+      q: { zh: `Punto Panorámico - Circuito Chico 具体在哪里？`, en: `Where exactly is Punto Panorámico - Circuito Chico located?`, it: `Dove si trova esattamente il Punto Panorámico - Circuito Chico?`, es: `¿Dónde está exactamente Punto Panorámico - Circuito Chico?` } as T,
+      a: {
+        zh: `它位于阿根廷内格罗河省圣卡洛斯-德巴里洛切的小环线（Cto. Chico / RP77）旁，Plus Code 为 <strong>WFHH+74</strong>，坐标约 -41.0827, -71.5465，就在俯瞰纳韦尔瓦皮湖的山路弯道处。`,
+        en: `It is located in San Carlos de Bariloche, Río Negro, Argentina, beside the Circuito Chico (Cto. Chico / RP77). Its Plus Code is <strong>WFHH+74</strong> and its coordinates are about -41.0827, -71.5465, at a bend in the road overlooking Nahuel Huapi Lake.`,
+        it: `Si trova a San Carlos de Bariloche, Río Negro, Argentina, accanto al Circuito Chico (Cto. Chico / RP77). Il Plus Code è <strong>WFHH+74</strong> e le coordinate sono circa -41.0827, -71.5465, in una curva che domina il lago Nahuel Huapi.`,
+        es: `Está en San Carlos de Bariloche, Río Negro, Argentina, junto al Circuito Chico (Cto. Chico / RP77). Su Plus Code es <strong>WFHH+74</strong> y sus coordenadas son aprox. -41.0827, -71.5465, en una curva que domina el lago Nahuel Huapi.`,
+      } as T,
+    },
+    {
+      q: { zh: `有停车场吗？`, en: `Is there parking?`, it: `C'è un parcheggio?`, es: `¿Hay estacionamiento?` } as T,
+      a: {
+        zh: `观景台旁设有路边停车带，请靠边安全停放，<strong>不要停在弯道视线盲区</strong>，也不要阻塞小环线交通。旺季与周末车位较紧张，建议上午或黄昏前往。`,
+        en: `There is a roadside pull-off beside the viewpoint. Park well to the side, <strong>never in a blind corner</strong>, and do not block Circuito Chico traffic. Spaces fill up on weekends and in high season, so mornings or dusk are best.`,
+        it: `C'è uno spazio di sosta lungo la strada accanto al belvedere. Parcheggia bene a lato, <strong>mai in un punto cieco</strong>, e non bloccare il traffico del Circuito Chico. Nei weekend e in alta stagione si riempie: meglio al mattino o al tramonto.`,
+        es: `Hay un espacio de estacionamiento junto a la ruta, al lado del mirador. Estacione bien al costado, <strong>nunca en una curva ciega</strong>, y no bloquee el tránsito del Circuito Chico. Se llena los fines de semana y en temporada alta: mejor por la mañana o al atardecer.`,
+      } as T,
+    },
+    {
+      q: { zh: `从观景台能看到什么？`, en: `What can I see from the viewpoint?`, it: `Cosa si vede dal belvedere?`, es: `¿Qué se ve desde el mirador?` } as T,
+      a: {
+        zh: `可俯瞰纳韦尔瓦皮湖（Lago Nahuel Huapi）的深蓝湖水，侧旁即是莫雷诺湖（Lago Moreno）；此外还有劳劳半岛（Llao Llao）与劳劳酒店，以及远处海拔 3,554 米的特罗纳多峰（Cerro Tronador）。晴朗黄昏时雪峰会被夕阳染成金红。`,
+        en: `You look out over the deep blue water of Nahuel Huapi Lake with Lago Moreno beside it, the Llao Llao peninsula and its historic hotel, and snow-capped Cerro Tronador (3,554 m) beyond. On a clear dusk the peak turns gold-red.`,
+        it: `Si ammirano il blu profondo del lago Nahuel Huapi con accanto il lago Moreno, la penisola di Llao Llao con il suo storico hotel e, più in là, il Cerro Tronador (3.554 m). In un tramonto sereno la cima si tinge d'oro e rosso.`,
+        es: `Se contempla el azul profundo del lago Nahuel Huapi y, al lado, el lago Moreno, además de la península de Llao Llao con su hotel histórico y, más allá, el Cerro Tronador (3.554 m). En un atardecer despejado la cumbre se tiñe de oro y rojo.`,
+      } as T,
+    },
+    {
+      q: { zh: `附近有厕所或商店吗？`, en: `Are there restrooms or shops nearby?`, it: `Ci sono bagni o negozi vicino?`, es: `¿Hay baños o comercios cerca?` } as T,
+      a: {
+        zh: `公共观景台本身<strong>没有服务设施</strong>（没有饮水点、没有小卖部）。不过就在旁边有一家独立经营的 <strong>Restaurant Punto Panorámico</strong>（阿根廷菜、烤肉与披萨），可以坐下来吃饭；若想有更多选择，可沿小环线前往 Colonia Suiza 或 Llao Llao 一带。请自备饮水并带走所有垃圾。`,
+        en: `The public terrace itself has <strong>no facilities</strong> (no water point, no kiosk). Right beside it, however, the <strong>Restaurant Punto Panorámico</strong> is a separate private business where you can sit down to eat (Argentine grill and pizza); for more choice, continue along the Circuito Chico towards Colonia Suiza or Llao Llao. Bring your own water and carry out all litter.`,
+        it: `La terrazza pubblica <strong>non ha servizi</strong> (né acqua, né chiosco). Proprio accanto, però, il <strong>Restaurant Punto Panorámico</strong> è una attività privata dove ci si può sedere a mangiare (cucina argentina alla griglia e pizza); per più scelta, prosegui lungo il Circuito Chico verso Colonia Suiza o Llao Llao. Porta acqua e porta via i rifiuti.`,
+        es: `La terraza pública <strong>no tiene servicios</strong> (ni agua, ni kiosco). Justo al lado, en cambio, el <strong>Restaurant Punto Panorámico</strong> es un local privado donde se puede comer (parrilla argentina y pizzas); para más opciones, siga por el Circuito Chico hacia Colonia Suiza o Llao Llao. Traiga agua y lleve su basura.`,
+      } as T,
+    },
+    {
+      q: { zh: `观景台可以吃饭吗？`, en: `Can you eat at Punto Panorámico?`, it: `Si può mangiare al Punto Panorámico?`, es: `¿Se puede comer en el Punto Panorámico?` } as T,
+      a: {
+        zh: `可以。免费公共观景台本身不卖食物，但紧挨着的 <strong>Restaurant Punto Panorámico</strong> 是独立经营的餐厅，主打阿根廷烤肉与披萨，部分餐桌正对湖景。旺季与周末建议提前或错峰前往；若想有更多选择，可沿小环线到 Colonia Suiza 或 Llao Llao 一带。`,
+        en: `Yes. The free public terrace sells no food, but the <strong>Restaurant Punto Panorámico</strong> right beside it is a separate business serving Argentine grill and pizza, with some tables facing the lake. In high season and at weekends, arrive early or off-peak; for more choice, head along the Circuito Chico to Colonia Suiza or Llao Llao.`,
+        it: `Sì. La terrazza pubblica gratuita non vende cibo, ma il <strong>Restaurant Punto Panorámico</strong> proprio accanto è una attività separata che serve cucina argentina alla griglia e pizza, con alcuni tavoli affacciati sul lago. In alta stagione e nei weekend conviene arrivare presto o fuori orario; per più scelta, prosegui lungo il Circuito Chico verso Colonia Suiza o Llao Llao.`,
+        es: `Sí. La terraza pública gratuita no vende comida, pero el <strong>Restaurant Punto Panorámico</strong> que está justo al lado es un local aparte que sirve parrilla argentina y pizzas, con algunas mesas frente al lago. En temporada alta y fines de semana conviene llegar temprano o fuera de hora; para más opciones, siga por el Circuito Chico hacia Colonia Suiza o Llao Llao.`,
       } as T,
     },
   ],
@@ -353,6 +398,8 @@ export const footer = {
   terms: { zh: `服务条款`, en: `Terms of Service`, it: `Termini di servizio`, es: `Términos del Servicio` } as T,
   cookies: { zh: `Cookie 设置`, en: `Cookie Settings`, it: `Impostazioni cookie`, es: `Configuración de Cookies` } as T,
   leaveNoTrace: { zh: `游览公约`, en: `Visitor Code`, it: `Codice del visitante`, es: `Código del visitante` } as T,
+  officialNameLabel: { zh: `官方名称`, en: `Official name`, it: `Nome ufficiale`, es: `Nombre oficial` } as T,
+  napNote: { zh: `名称与地址与 Google 地图地点条目保持一致（NAP 一致性）。`, en: `Name and address are kept consistent with the Google Maps place listing (NAP consistency).`, it: `Nome e indirizzo sono mantenuti coerenti con la scheda del luogo su Google Maps (coerenza NAP).`, es: `El nombre y la dirección se mantienen coherentes con la ficha del lugar en Google Maps (consistencia NAP).` } as T,
 };
 
 // ── Privacy Policy Page ──
@@ -376,10 +423,10 @@ export const privacy = {
   } as T,
   h2_third: { zh: `第三方服务`, en: `Third-Party Services`, it: `Servizi di terze parti`, es: `Servicios de terceros` } as T,
   p_third: {
-    zh: `我们的网站可能会使用第三方服务，例如谷歌地图（用于嵌入式地图和位置数据）和谷歌分析（用于流量分析）。本站图片均为 Punto Panorámico 实地拍摄并存储于本服务器。这些服务均有各自的隐私政策。`,
-    en: `Our website may use third-party services, such as Google Maps (for embedded maps and location data) and Google Analytics (for traffic analysis). All photographs on this site are taken at Punto Panorámico and hosted on our own server. These services have their own privacy policies.`,
-    it: `Il nostro sito può usare servizi di terze parti, come Google Maps (per mappe incorporate e dati di posizione) e Google Analytics (per l'analisi del traffico). Tutte le foto del sito sono scattate al Punto Panorámico e ospitate sul nostro server. Questi servizi hanno le proprie politiche sulla privacy.`,
-    es: `Nuestro sitio puede usar servicios de terceros, como Google Maps (para mapas y datos de ubicación) y Google Analytics (para análisis de tráfico). Todas las fotos del sitio fueron tomadas en el Punto Panorámico y alojadas en nuestro propio servidor. Estos servicios tienen sus propias políticas de privacidad.`,
+    zh: `我们的网站可能会使用第三方服务，例如谷歌地图（用于嵌入式地图和位置数据）和谷歌分析 GA4（用于流量分析）。站内所展示图片的版权归原摄影者所有。这些服务均有各自的隐私政策。`,
+    en: `Our website may use third-party services, such as Google Maps (for embedded maps and location data) and Google Analytics 4 (for traffic analysis). The copyright of the images displayed on this site belongs to their original photographers. These services have their own privacy policies.`,
+    it: `Il nostro sito può usare servizi di terze parti, come Google Maps (per mappe incorporate e dati di posizione) e Google Analytics 4 (per l'analisi del traffico). Il copyright delle immagini mostrate appartiene ai rispettivi fotografi originali. Questi servizi hanno le proprie politiche sulla privacy.`,
+    es: `Nuestro sitio puede usar servicios de terceros, como Google Maps (para mapas y datos de ubicación) y Google Analytics 4 (para análisis de tráfico). Los derechos de autor de las imágenes mostradas pertenecen a sus fotógrafos originales. Estos servicios tienen sus propias políticas de privacidad.`,
   } as T,
   h2_rights: { zh: `您的权利`, en: `Your Rights`, it: `I tuoi diritti`, es: `Sus derechos` } as T,
   p_rights: {
@@ -418,10 +465,10 @@ export const terms = {
   } as T,
   h2_ip: { zh: `知识产权`, en: `Intellectual Property`, it: `Proprietà intellettuale`, es: `Propiedad intelectual` } as T,
   p_ip: {
-    zh: `本网站设计和原创内容受版权保护。站内图片均为 Punto Panorámico 实地拍摄，版权归本网站所有。Google 地图数据的使用符合 Google 的服务条款。`,
-    en: `The website design and original content are protected by copyright. All photographs on this site are taken at Punto Panorámico and are owned by this website. Google Maps data is used in accordance with Google's Terms of Service.`,
-    it: `Il design del sito e i contenuti originali sono protetti da copyright. Tutte le foto del sito sono scattate al Punto Panorámico e appartengono a questo sito. I dati di Google Maps sono usati secondo i Termini di servizio di Google.`,
-    es: `El diseño del sitio y el contenido original están protegidos por derechos de autor. Todas las fotos del sitio fueron tomadas en el Punto Panorámico y pertenecen a este sitio. Los datos de Google Maps se usan según los Términos del Servicio de Google.`,
+    zh: `本网站的设计与原创文字内容受版权保护。站内所展示的所有图片产权及版权均归原摄影者所有，仅用于介绍与说明 Punto Panorámico - Circuito Chico 这一公共景点，不用于商业用途。Google 地图数据的使用符合 Google 的服务条款。`,
+    en: `The website design and original written content are protected by copyright. The property rights and copyright of all images displayed on this site belong to their original photographers; they are used solely to describe and illustrate the public attraction Punto Panorámico - Circuito Chico and not for commercial purposes. Google Maps data is used in accordance with Google's Terms of Service.`,
+    it: `Il design del sito e i contenuti testuali originali sono protetti da copyright. I diritti di proprietà e il copyright di tutte le immagini mostrate appartengono ai rispettivi fotografi originali; sono usate solo per descrivere e illustrare l'attrazione pubblica Punto Panorámico - Circuito Chico e non per scopi commerciali. I dati di Google Maps sono usati secondo i Termini di servizio di Google.`,
+    es: `El diseño del sitio y el contenido textual original están protegidos por derechos de autor. Los derechos de propiedad y los derechos de autor de todas las imágenes mostradas pertenecen a sus fotógrafos originales; se usan solo para describir e ilustrar la atracción pública Punto Panorámico - Circuito Chico y no con fines comerciales. Los datos de Google Maps se usan según los Términos del Servicio de Google.`,
   } as T,
   h2_liability: { zh: `责任限制`, en: `Limitation of Liability`, it: `Limitazione di responsabilità`, es: `Limitación de responsabilidad` } as T,
   p_liability: {
@@ -474,7 +521,212 @@ export const cookies = {
 };
 
 // ── Meta ──
+// SERP copy — Option B (landmark / viewpoint positioning).
+// Strategy (driven by GSC: high impressions, ~0% CTR):
+//   1. lead with the landmark role word ("Mirador" / "Viewpoint" / "观景台"),
+//      which is how people describe this place in their own words
+//   2. keep the official entity name "Punto Panorámico" + "Circuito Chico"
+//   3. anchor the geography in parentheses for local relevance
+//   4. description sells the view (Lago Moreno + Llao Llao) and the 4.9★ proof,
+//      then closes with the practical intent (how to get there + map)
+// Titles stay near ~60 characters so Google does not truncate them in the SERP.
 export const meta = {
-  title: { zh: `Punto Panorámico · 巴里洛切全景观景台 — 小环线 RP77 免费 24 小时开放`, en: `Punto Panorámico · Bariloche's panoramic viewpoint on the Circuito Chico`, it: `Punto Panorámico · Il belvedere panoramico di Bariloche sul Circuito Chico`, es: `Punto Panorámico · Mirador de Bariloche en el Circuito Chico` } as T,
-  description: { zh: `Punto Panorámico（巴里洛切小环线 RP77）完整指南：纳韦尔瓦皮湖全景、劳劳半岛与特罗纳多峰、免费 24 小时开放、自驾与 Línea 20 公交、安第斯生态与游览公约。`, en: `The complete guide to Punto Panorámico on Bariloche's Circuito Chico (RP77): Nahuel Huapi Lake panorama, Llao Llao and Cerro Tronador, free 24h access, self-drive and Línea 20 bus, Andean ecology and the visitor code.`, it: `La guida completa al Punto Panorámico sul Circuito Chico (RP77) di Bariloche: panoramica del lago Nahuel Huapi, Llao Llao e Cerro Tronador, accesso libero 24 h, auto e Línea 20, ecologia andina e codice del visitante.`, es: `La guía completa del Punto Panorámico en el Circuito Chico (RP77) de Bariloche: panorámica del lago Nahuel Huapi, Llao Llao y Cerro Tronador, acceso libre 24 h, auto y Línea 20, ecología andina y el código del visitante.` } as T,
+  title: {
+    zh: `Punto Panorámico 观景台 · 小环线（巴里洛切）`,
+    en: `Punto Panorámico Viewpoint - Circuito Chico (Bariloche)`,
+    it: `Belvedere Punto Panorámico - Circuito Chico (Bariloche)`,
+    es: `Mirador Punto Panorámico - Circuito Chico (San Carlos de Bariloche)`,
+  } as T,
+  description: {
+    zh: `到访巴里洛切的 Punto Panorámico 观景台（4.9★），饱览莫雷诺湖与 Llao Llao 的最佳视野。含最新交通方式与地图信息。`,
+    en: `Visit the Punto Panorámico viewpoint in Bariloche (4.9★). Enjoy the best views over Lago Moreno and Llao Llao. Up-to-date information on how to get there and a map.`,
+    it: `Visita il belvedere Punto Panorámico a Bariloche (4.9★). Goditi la vista migliore sul Lago Moreno e su Llao Llao. Informazioni aggiornate su come arrivare e mappa.`,
+    es: `Visita el Mirador Punto Panorámico en Bariloche (4.9★). Disfruta de la mejor vista al Lago Moreno y Llao Llao. Información actualizada de cómo llegar y mapa.`,
+  } as T,
 };
+
+// ── Entity Semantic Binding (single-attraction SEO) ──
+export const entity = {
+  sectionNum: { zh: `实体信息`, en: `Entity`, it: `Entità`, es: `Entidad` } as T,
+  officialNameLabel: { zh: `官方全称`, en: `Official name`, it: `Nome ufficiale`, es: `Nombre oficial` } as T,
+  locationLabel: { zh: `所在地`, en: `Location`, it: `Località`, es: `Ubicación` } as T,
+  breadcrumbHome: { zh: `首页`, en: `Home`, it: `Home`, es: `Inicio` } as T,
+  breadcrumbAria: { zh: `地理面包屑导航`, en: `Geographic breadcrumb`, it: `Percorso geografico`, es: `Ruta geográfica` } as T,
+  aboutHeading: {
+    zh: `关于 Punto Panorámico - Circuito Chico`,
+    en: `About Punto Panorámico - Circuito Chico`,
+    it: `Informazioni su Punto Panorámico - Circuito Chico`,
+    es: `Acerca de Punto Panorámico - Circuito Chico`,
+  } as T,
+  welcome: {
+    zh: `欢迎来到 <strong>Punto Panorámico - Circuito Chico</strong>，它被广泛认可为核心 <strong>Mirador Chico</strong>（即本域名 miradorchico.com 的含义）。这里位于阿根廷内格罗河省圣卡洛斯-德巴里洛切的心脏地带，是旅人游览纳韦尔瓦皮地区时的主要枢纽。`,
+    en: `Welcome to <strong>Punto Panorámico - Circuito Chico</strong>, widely recognized as the central <strong>Mirador Chico</strong> (the meaning behind miradorchico.com). Located in the heart of <strong>San Carlos de Bariloche</strong>, <strong>Río Negro</strong>, <strong>Argentina</strong>, this destination serves as a primary hub for travellers visiting the Nahuel Huapi region.`,
+    it: `Benvenuti al <strong>Punto Panorámico - Circuito Chico</strong>, ampiamente riconosciuto come il centrale <strong>Mirador Chico</strong> (il significato di miradorchico.com). Situato nel cuore di <strong>San Carlos de Bariloche</strong>, <strong>Río Negro</strong>, <strong>Argentina</strong>, è un punto di riferimento per chi visita la regione del Nahuel Huapi.`,
+    es: `Bienvenido a <strong>Punto Panorámico - Circuito Chico</strong>, ampliamente reconocido como el <strong>Mirador Chico</strong> central (el significado de miradorchico.com). Situado en el corazón de <strong>San Carlos de Bariloche</strong>, <strong>Río Negro</strong>, <strong>Argentina</strong>, es un punto de referencia para quienes visitan la región del Nahuel Huapi.`,
+  } as T,
+  historyHeading: {
+    zh: `Punto Panorámico - Circuito Chico 的历史与意义`,
+    en: `History & Significance of Punto Panorámico - Circuito Chico`,
+    it: `Storia e significato di Punto Panorámico - Circuito Chico`,
+    es: `Historia y significado de Punto Panorámico - Circuito Chico`,
+  } as T,
+  history: {
+    zh: `如今被称作“小环线”（Circuito Chico）的观景公路，源自 20 世纪初阿根廷国家公园先驱 Ezequiel Bustillo 的规划——他把纳韦尔瓦皮湖沿岸最动人的观景点用一条公路串联起来。观景台本身不设闸口、不设围栏；作为纳韦尔瓦皮国家公园内的公共空间，它始终免费、全天候向所有人开放。`,
+    en: `The scenic road now known as the Circuito Chico traces back to the early 20th century, when Argentine National Parks pioneer Ezequiel Bustillo linked the finest viewpoints along Nahuel Huapi Lake into a single drive. The viewpoint itself has no gate and no fence: as a public space inside Nahuel Huapi National Park, it stays free and open to everyone, all day.`,
+    it: `La strada panoramica oggi nota come Circuito Chico risale all'inizio del XX secolo, quando il pioniere dei Parchi Nazionali argentini Ezequiel Bustillo collegò in un unico percorso i migliori belvedere lungo il lago Nahuel Huapi. Il belvedere non ha cancelli né recinzioni: come spazio pubblico dentro il Parco Nazionale Nahuel Huapi, resta libero e aperto a tutti, tutto il giorno.`,
+    es: `El camino panorámico hoy conocido como Circuito Chico se remonta a principios del siglo XX, cuando el pionero de los Parques Nacionales argentinos Ezequiel Bustillo unió en un solo recorrido los mejores miradores del lago Nahuel Huapi. El mirador no tiene portón ni cerco: como espacio público dentro del Parque Nacional Nahuel Huapi, sigue siendo gratuito y abierto a todos, todo el día.`,
+  } as T,
+  landmarksHeading: {
+    zh: `Punto Panorámico 周边的地标与景点`,
+    en: `Landmarks & Attractions Around Punto Panorámico`,
+    it: `Luoghi e attrazioni intorno al Punto Panorámico`,
+    es: `Lugares y atractivos alrededor del Punto Panorámico`,
+  } as T,
+  landmarks: {
+    zh: `在游览 <strong>Punto Panorámico - Circuito Chico</strong> 时，访客可以轻松探访周边的历史地标与兴趣点，包括 <strong>Llao Llao</strong> 与 <strong>Cerro Catedral</strong>，以及 Colonia Suiza、Bahía López 和 Puerto Pañuelo。`,
+    en: `When visiting <strong>Punto Panorámico - Circuito Chico</strong>, visitors can easily explore surrounding historical landmarks and points of interest, including <strong>Llao Llao</strong> and <strong>Cerro Catedral</strong>, as well as Colonia Suiza, Bahía López and Puerto Pañuelo.`,
+    it: `Visitando il <strong>Punto Panorámico - Circuito Chico</strong>, i visitatori possono esplorare facilmente i luoghi storici e i punti d'interesse vicini, tra cui <strong>Llao Llao</strong> e <strong>Cerro Catedral</strong>, oltre a Colonia Suiza, Bahía López e Puerto Pañuelo.`,
+    es: `Al visitar <strong>Punto Panorámico - Circuito Chico</strong>, los visitantes pueden explorar fácilmente los lugares históricos y puntos de interés cercanos, como <strong>Llao Llao</strong> y <strong>Cerro Catedral</strong>, además de Colonia Suiza, Bahía López y Puerto Pañuelo.`,
+  } as T,
+  exploreLink: { zh: `查看 Punto Panorámico 周边景点 →`, en: `See attractions near Punto Panorámico →`, it: `Vedi le attrazioni vicino al Punto Panorámico →`, es: `Ver atracciones cerca del Punto Panorámico →` } as T,
+  historyLink: { zh: `阅读完整深度百科 →`, en: `Read the full encyclopedia →`, it: `Leggi l'enciclopedia completa →`, es: `Leer la enciclopedia completa →` } as T,
+  // Exact-match anchor links used to reinforce internal topical relevance
+  // (avoids generic "click here" anchors).
+  jumpHeading: { zh: `本页快捷导航`, en: `Jump to`, it: `Vai a`, es: `Ir a` } as T,
+  jumpLinks: [
+    { label: { zh: `如何前往观景台`, en: `How to get to Punto Panorámico`, it: `Come arrivare al Punto Panorámico`, es: `Cómo llegar al Punto Panorámico` } as T, href: '#transport' },
+    { label: { zh: `地图与 GPS 坐标`, en: `Map and GPS coordinates`, it: `Mappa e coordinate GPS`, es: `Mapa y coordenadas GPS` } as T, href: '#location' },
+    { label: { zh: `附近吃饭`, en: `Where to eat nearby`, it: `Dove mangiare vicino`, es: `Dónde comer cerca` } as T, href: '#dining' },
+    { label: { zh: `常见问题`, en: `Visitor FAQ`, it: `Domande frequenti`, es: `Preguntas frecuentes` } as T, href: '#faq' },
+  ],
+};
+
+// ── Dining (targets the "restaurant" / "donde comer" search intent) ──
+// Editorial note: the terrace itself is a free public space with no kiosk; the
+// Restaurant Punto Panorámico is a separate private business right beside it.
+// Descriptions stay orientation-only — no prices, no commercial endorsement.
+export const dining = {
+  sectionNum: { zh: `餐饮`, en: `Food & Drink`, it: `Dove mangiare`, es: `Gastronomía` } as T,
+  heading: {
+    zh: `在 Punto Panorámico 附近<em class="text-[color:var(--color-emerald)]">吃饭与喝咖啡</em>`,
+    en: `Where to eat<em class="text-[color:var(--color-emerald)]"> near Punto Panorámico</em>`,
+    it: `Dove mangiare<em class="text-[color:var(--color-emerald)]"> vicino al Punto Panorámico</em>`,
+    es: `Dónde comer<em class="text-[color:var(--color-emerald)]"> cerca del Punto Panorámico</em>`,
+  } as T,
+  subtitle: {
+    zh: `观景台本身不设小卖部，但紧邻的 Restaurant Punto Panorámico 提供烤肉与披萨；沿小环线再往前，还有 Colonia Suiza 与 Llao Llao 两个餐饮片区。`,
+    en: `The terrace itself has no kiosk, but the Restaurant Punto Panorámico next door serves Argentine grill and pizza; further along the Circuito Chico, Colonia Suiza and the Llao Llao area add more options.`,
+    it: `La terrazza non ha un chiosco, ma il Restaurant Punto Panorámico accanto serve cucina argentina alla griglia e pizza; più avanti lungo il Circuito Chico, Colonia Suiza e la zona di Llao Llao offrono altre opzioni.`,
+    es: `La terraza no tiene kiosco, pero el Restaurant Punto Panorámico que está al lado sirve parrilla argentina y pizzas; más adelante por el Circuito Chico, Colonia Suiza y la zona de Llao Llao suman más opciones.`,
+  } as T,
+  items: [
+    {
+      name: { zh: `Restaurant Punto Panorámico`, en: `Restaurant Punto Panorámico`, it: `Restaurant Punto Panorámico`, es: `Restaurant Punto Panorámico` } as T,
+      type: { zh: `阿根廷菜 · 烤肉与披萨`, en: `Argentine cuisine · Grill and pizza`, it: `Cucina argentina · Griglia e pizza`, es: `Cocina argentina · Parrilla y pizzas` } as T,
+      where: { zh: `紧邻观景台 · 步行 0 分钟`, en: `Right at the viewpoint · 0 min walk`, it: `Accanto al belvedere · 0 min a piedi`, es: `Junto al mirador · 0 min a pie` } as T,
+      desc: {
+        zh: `观景台上唯一可以坐下来吃饭的地方，餐桌正对湖景。它是独立经营的私人餐厅，与免费开放的公共观景台不是一回事；旺季与周末容易满座。`,
+        en: `The only place to sit down and eat right at the mirador, with tables facing the lake. It is a privately run business, separate from the free public terrace, and it fills up in high season and at weekends.`,
+        it: `L'unico locale dove sedersi a mangiare proprio al belvedere, con tavoli affacciati sul lago. È una attività privata, diversa dalla terrazza pubblica e gratuita; in alta stagione e nei weekend si riempie.`,
+        es: `El único local para comer justo en el mirador, con mesas frente al lago. Es un emprendimiento privado, distinto de la terraza pública y gratuita; en temporada alta y los fines de semana suele llenarse.`,
+      } as T,
+    },
+    {
+      name: { zh: `Colonia Suiza（瑞士村）`, en: `Colonia Suiza`, it: `Colonia Suiza`, es: `Colonia Suiza` } as T,
+      type: { zh: `手工 kuchen 蛋糕 · 炭火烤肉`, en: `Home-made kuchen · Open-fire asado`, it: `Kuchen fatto in casa · Asado alla griglia`, es: `Kuchen casero · Asado a la parrilla` } as T,
+      where: { zh: `沿小环线继续前行`, en: `Further along the Circuito Chico`, it: `Più avanti lungo il Circuito Chico`, es: `Más adelante por el Circuito Chico` } as T,
+      desc: {
+        zh: `由瑞士移民建立的村落，以 kuchen（奶油蛋糕）和炭火烤肉闻名，是环线途中最有烟火气的一站。`,
+        en: `A village founded by Swiss settlers, known for its kuchen (cream cake) and open-fire asado — the tastiest stop on the loop.`,
+        it: `Villaggio fondato da coloni svizzeri, noto per il kuchen (torta alla crema) e l'asado alla griglia: la sosta più gustosa del giro.`,
+        es: `Pueblo fundado por colonos suizos, famoso por su kuchen (torta de crema) y el asado a la parrilla: la parada más sabrosa del circuito.`,
+      } as T,
+    },
+    {
+      name: { zh: `Llao Llao 与 Puerto Pañuelo 一带`, en: `Llao Llao & Puerto Pañuelo`, it: `Llao Llao e Puerto Pañuelo`, es: `Llao Llao y Puerto Pañuelo` } as T,
+      type: { zh: `咖啡馆 · 酒店餐厅`, en: `Cafés · Hotel restaurants`, it: `Caffè · Ristoranti d'hotel`, es: `Cafeterías · Restaurantes de hotel` } as T,
+      where: { zh: `车程数分钟`, en: `A few minutes by car`, it: `Pochi minuti in auto`, es: `A pocos minutos en auto` } as T,
+      desc: {
+        zh: `Llao Llao 与 Puerto Pañuelo 一带聚集了咖啡馆与酒店餐厅，可望见海湾；适合在观景台前后喝杯咖啡或安静吃顿午饭。`,
+        en: `The Llao Llao and Puerto Pañuelo area has cafés and hotel restaurants overlooking the bay — handy for a coffee or a quiet lunch before or after the viewpoint.`,
+        it: `La zona di Llao Llao e Puerto Pañuelo offre caffè e ristoranti d'hotel con vista sulla baia: comodo per un caffè o un pranzo tranquillo prima o dopo il belvedere.`,
+        es: `La zona de Llao Llao y Puerto Pañuelo reúne cafeterías y restaurantes de hotel con vista a la bahía: buena opción para un café o un almuerzo tranquilo antes o después del mirador.`,
+      } as T,
+    },
+  ],
+  transportLink: { zh: `如何前往 Punto Panorámico`, en: `How to get to Punto Panorámico`, it: `Come arrivare al Punto Panorámico`, es: `Cómo llegar al Punto Panorámico` } as T,
+  disclaimer: {
+    zh: `以上仅为餐饮区域的位置提示，不构成商业推荐。价格与营业时间常有变动，请以现场或 Google 地图信息为准。`,
+    en: `This is orientation information on where to find food, not a commercial recommendation. Prices and opening hours change: check on site or on Google Maps.`,
+    it: `Informazioni orientative su dove trovare da mangiare, non una raccomandazione commerciale. Prezzi e orari cambiano: verifica sul posto o su Google Maps.`,
+    es: `Información orientativa sobre dónde encontrar comida, no una recomendación comercial. Precios y horarios cambian: verifíquelos en el lugar o en Google Maps.`,
+  } as T,
+};
+
+// ── Location & Map ──
+export const locationMap = {
+  sectionNum: { zh: `位置与地图`, en: `Location`, it: `Posizione`, es: `Ubicación` } as T,
+  heading: {
+    zh: `位置与到访方式：圣卡洛斯-德巴里洛切的 Punto Panorámico`,
+    en: `Location & How to Visit Punto Panorámico in San Carlos de Bariloche`,
+    it: `Posizione e come visitare il Punto Panorámico a San Carlos de Bariloche`,
+    es: `Ubicación y cómo visitar el Punto Panorámico en San Carlos de Bariloche`,
+  } as T,
+  subtitle: {
+    zh: `Punto Panorámico - Circuito Chico 位于小环线（Cto. Chico / RP77）旁，距巴里洛切市中心约 12 公里。以下为官方地图定位与一致的名称、地址信息，方便您导航与核实。`,
+    en: `Punto Panorámico - Circuito Chico sits beside the Circuito Chico (Cto. Chico / RP77), about 12 km from downtown Bariloche. Below is the official map location together with consistent name and address details for navigation and verification.`,
+    it: `Il Punto Panorámico - Circuito Chico si trova accanto al Circuito Chico (Cto. Chico / RP77), a circa 12 km dal centro di Bariloche. Qui sotto la posizione ufficiale sulla mappa con nome e indirizzo coerenti per navigare e verificare.`,
+    es: `Punto Panorámico - Circuito Chico está junto al Circuito Chico (Cto. Chico / RP77), a unos 12 km del centro de Bariloche. Abajo está la ubicación oficial en el mapa junto con el nombre y la dirección coherentes para navegar y verificar.`,
+  } as T,
+  addressLabel: { zh: `地址`, en: `Address`, it: `Indirizzo`, es: `Dirección` } as T,
+  addressValue: { zh: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, 阿根廷`, en: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, Argentina`, it: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, Argentina`, es: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, Argentina` } as T,
+  plusCodeLabel: { zh: `Plus Code`, en: `Plus Code`, it: `Plus Code`, es: `Plus Code` } as T,
+  coordsLabel: { zh: `坐标`, en: `Coordinates`, it: `Coordinate`, es: `Coordenadas` } as T,
+  hoursLabel: { zh: `开放时间`, en: `Hours`, it: `Orari`, es: `Horario` } as T,
+  hoursValue: { zh: `全天 24 小时 · 免费`, en: `Open 24 h · Free`, it: `Aperto 24 h · Gratis`, es: `Abierto 24 h · Gratis` } as T,
+  directionsLabel: { zh: `如何到达`, en: `Getting there`, it: `Come arrivare`, es: `Cómo llegar` } as T,
+  directions: {
+    zh: `从市中心沿小环线 RP77 向西南自驾约 15 分钟；也可乘坐 Línea 20 公交在附近站点下车步行，或打车 / remis 直达。全线为铺装柏油路。`,
+    en: `Drive about 15 minutes southwest from downtown along the RP77 Circuito Chico; you can also take the Línea 20 bus and walk from a nearby stop, or arrive directly by taxi/remis. The road is fully paved.`,
+    it: `In auto circa 15 minuti dal centro verso sud-ovest lungo la RP77 del Circuito Chico; puoi anche prendere la Línea 20 e camminare dalla fermata vicina, oppure arrivare direttamente in taxi/remis. Strada tutta asfaltata.`,
+    es: `En auto, unos 15 minutos desde el centro hacia el suroeste por la RP77 del Circuito Chico; también puede tomar la Línea 20 y caminar desde una parada cercana, o llegar directamente en taxi/remis. Camino totalmente pavimentado.`,
+  } as T,
+  openInMaps: { zh: `在 Google 地图中打开`, en: `Open in Google Maps`, it: `Apri in Google Maps`, es: `Abrir en Google Maps` } as T,
+  mapTitle: { zh: `Punto Panorámico - Circuito Chico 谷歌地图位置`, en: `Google Map of Punto Panorámico - Circuito Chico`, it: `Mappa Google del Punto Panorámico - Circuito Chico`, es: `Mapa de Google de Punto Panorámico - Circuito Chico` } as T,
+  officialText: {
+    zh: `如需官方最新信息与区域旅游资讯，请访问 <a href="https://barilocheturismo.gob.ar/es/circuito-chico" target="_blank" rel="noopener noreferrer">阿根廷 / 内格罗河省官方旅游门户</a>，以及 <a href="https://www.argentina.gob.ar/parquesnacionales/nahuelhuapi" target="_blank" rel="noopener noreferrer">纳韦尔瓦皮国家公园官方页面</a>。`,
+    en: `For official updates and regional tourism information, visit the <a href="https://barilocheturismo.gob.ar/es/circuito-chico" target="_blank" rel="noopener noreferrer">Argentina / Río Negro Official Tourism Portal</a> and the <a href="https://www.argentina.gob.ar/parquesnacionales/nahuelhuapi" target="_blank" rel="noopener noreferrer">official Nahuel Huapi National Park page</a>.`,
+    it: `Per aggiornamenti ufficiali e informazioni turistiche regionali, visita il <a href="https://barilocheturismo.gob.ar/es/circuito-chico" target="_blank" rel="noopener noreferrer">Portale turistico ufficiale di Argentina / Río Negro</a> e la <a href="https://www.argentina.gob.ar/parquesnacionales/nahuelhuapi" target="_blank" rel="noopener noreferrer">pagina ufficiale del Parco Nazionale Nahuel Huapi</a>.`,
+    es: `Para información oficial actualizada y turismo regional, visite el <a href="https://barilocheturismo.gob.ar/es/circuito-chico" target="_blank" rel="noopener noreferrer">Portal Oficial de Turismo de Argentina / Río Negro</a> y la <a href="https://www.argentina.gob.ar/parquesnacionales/nahuelhuapi" target="_blank" rel="noopener noreferrer">página oficial del Parque Nacional Nahuel Huapi</a>.`,
+  } as T,
+};
+
+// ── Sources & Image Credits (E-E-A-T) ──
+export const sources = {
+  sectionNum: { zh: `资料来源`, en: `Sources`, it: `Fonti`, es: `Fuentes` } as T,
+  heading: { zh: `资料来源与官方参考`, en: `Sources & Official References`, it: `Fonti e riferimenti ufficiali`, es: `Fuentes y referencias oficiales` } as T,
+  intro: {
+    zh: `本页信息由 miradorchico 独立科普团队根据公开的政府、旅游局与国家公园资料整理，用于增强内容的可核验性与专业性。下列外链仅用于公共信息核验，不构成任何商业推荐。`,
+    en: `The information on this page was compiled by the independent miradorchico editorial team from public government, tourism and National Park sources, to strengthen the verifiability and expertise of the content. The external links below are for public-information verification only and are not commercial recommendations.`,
+    it: `Le informazioni di questa pagina sono state raccolte dal team editoriale indipendente di miradorchico da fonti pubbliche di governo, turismo e Parchi Nazionali, per rafforzare la verificabilità e la competenza dei contenuti. I link esterni sotto servono solo alla verifica di informazioni pubbliche e non sono raccomandazioni commerciali.`,
+    es: `La información de esta página fue compilada por el equipo editorial independiente de miradorchico a partir de fuentes públicas de gobierno, turismo y Parques Nacionales, para reforzar la verificabilidad y la idoneidad del contenido. Los enlaces externos de abajo son solo para verificar información pública y no son recomendaciones comerciales.`,
+  } as T,
+  officialLabel: { zh: `官方来源`, en: `Official sources`, it: `Fonti ufficiali`, es: `Fuentes oficiales` } as T,
+  imageCreditTitle: { zh: `图片产权`, en: `Image credits`, it: `Diritti sulle immagini`, es: `Créditos de imagen` } as T,
+  imageCredit: {
+    zh: `本网站所展示的所有图片产权及版权均归原摄影者所有。图片仅用于介绍与说明 Punto Panorámico - Circuito Chico 这一公共景点，不用于任何商业用途。`,
+    en: `The property rights and copyright of all images displayed on this website belong to their original photographers. Images are used solely to describe and illustrate the public attraction Punto Panorámico - Circuito Chico and are not used for any commercial purpose.`,
+    it: `I diritti di proprietà e il copyright di tutte le immagini mostrate su questo sito appartengono ai rispettivi fotografi originali. Le immagini sono usate solo per descrivere e illustrare l'attrazione pubblica Punto Panorámico - Circuito Chico e non per scopi commerciali.`,
+    es: `Los derechos de propiedad y los derechos de autor de todas las imágenes mostradas en este sitio pertenecen a sus fotógrafos originales. Las imágenes se usan solo para describir e ilustrar la atracción pública Punto Panorámico - Circuito Chico y no con fines comerciales.`,
+  } as T,
+  mapsListing: { zh: `Google 地图商户/地点条目`, en: `Google Maps place listing`, it: `Scheda luogo su Google Maps`, es: `Ficha del lugar en Google Maps` } as T,
+  mapsNote: { zh: `用于核验名称、地址与评分等公开地点信息。`, en: `Used to verify the public place name, address and rating.`, it: `Usata per verificare nome, indirizzo e valutazione del luogo pubblico.`, es: `Se usa para verificar el nombre, la dirección y la valoración del lugar público.` } as T,
+};
+
+// ── Image credit (short, used in the footer) ──
+export const imageCredit = {
+  zh: `图片产权：本网站所展示的所有图片产权及版权均归原摄影者所有。`,
+  en: `Image credits: the property rights and copyright of all images displayed on this website belong to their original photographers.`,
+  it: `Diritti sulle immagini: i diritti di proprietà e il copyright di tutte le immagini di questo sito appartengono ai rispettivi fotografi originali.`,
+  es: `Créditos de imagen: los derechos de propiedad y los derechos de autor de todas las imágenes de este sitio pertenecen a sus fotógrafos originales.`,
+} as T;

@@ -1,10 +1,11 @@
 ---
 import type { Lang } from '../i18n/utils';
 import { climate } from '../i18n/translations';
+import { ATTRACTION } from '../data/attraction';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
-const LAT = -41.1233, LNG = -71.3472, TZ = 'America/Argentina/Buenos_Aires';
+const LAT = ATTRACTION.latitude, LNG = ATTRACTION.longitude, TZ = 'America/Argentina/Buenos_Aires';
 const LOCALE = lang === 'zh' ? 'zh-CN' : (lang === 'it' ? 'it-IT' : (lang === 'es' ? 'es-AR' : 'en-US'));
 const labels = {
   wind: _(climate.windLabel), direction: _(climate.directionLabel), gust: _(climate.gustLabel),

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Punto Panorámico - Circuito Chico">
+  <rect width="512" height="512" fill="#0B1F1A"/>
+  <circle cx="330" cy="186" r="42" fill="#E8B14B"/>
+  <path d="M96 360 L214 222 L288 322 L336 264 L416 360 Z" fill="#2F6B4E"/>
+  <path d="M96 360 L214 222 L256 274 L172 360 Z" fill="#1F3B34"/>
+</svg>

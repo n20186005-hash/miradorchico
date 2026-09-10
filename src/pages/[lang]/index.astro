@@ -5,18 +5,23 @@ import { meta } from '../../i18n/translations';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Hero from '../../components/Hero.astro';
+import EntityIntro from '../../components/EntityIntro.astro';
 import Marquee from '../../components/Marquee.astro';
 import Manifesto from '../../components/Manifesto.astro';
 import Highlights from '../../components/Highlights.astro';
 import PracticalInfo from '../../components/PracticalInfo.astro';
+import Weather from '../../components/Weather.astro';
 import ClimateTides from '../../components/ClimateTides.astro';
 import Transport from '../../components/Transport.astro';
+import LocationMap from '../../components/LocationMap.astro';
+import Dining from '../../components/Dining.astro';
 import Encyclopedia from '../../components/Encyclopedia.astro';
 import Ecology from '../../components/Ecology.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
 import Surrounding from '../../components/Surrounding.astro';
 import Faq from '../../components/Faq.astro';
+import SourcesSection from '../../components/SourcesSection.astro';
 import LeaveNoTrace from '../../components/LeaveNoTrace.astro';
 import Footer from '../../components/Footer.astro';
 import StructuredData from '../../components/StructuredData.astro';
@@ -33,12 +38,16 @@ const desc = _(meta.description);
 <BaseLayout lang={lang} title={title} description={desc}>
   <Nav lang={lang} />
   <Hero lang={lang} />
+  <EntityIntro lang={lang} />
   <Marquee />
   <Manifesto lang={lang} />
   <Highlights lang={lang} />
   <PracticalInfo lang={lang} />
+  <Weather lang={lang} />
   <ClimateTides lang={lang} />
   <Transport lang={lang} />
+  <LocationMap lang={lang} />
+  <Dining lang={lang} />
   <Encyclopedia lang={lang} />
   <Ecology lang={lang} />
   <Gallery lang={lang} />
@@ -46,6 +55,7 @@ const desc = _(meta.description);
   <Surrounding lang={lang} />
   <LeaveNoTrace lang={lang} />
   <Faq lang={lang} />
+  <SourcesSection lang={lang} />
   <Footer lang={lang} />
   <StructuredData lang={lang} />
 </BaseLayout>

@@ -34,3 +34,6 @@ details[open] .faq-plus { transform: rotate(45deg); }
 body[data-mode="tourist"] .science-only { display: none !important; }
 body[data-mode="science"] .tourist-only { display: none !important; }
 .num-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; }
+.wx-tab { color: var(--color-moss); transition: background .2s, color .2s; }
+.wx-tab:hover { background: rgba(47,107,78,.12); }
+.wx-tab.active { background: var(--color-emerald); color: var(--color-cream); }

@@ -25,7 +25,7 @@ const bento = [
     <div class="grid grid-cols-12 gap-3 md:gap-4">
       {imgs.map((src, i) => (
         <figure class={`${bento[i] || 'col-span-6 aspect-[4/3]'} rounded-2xl overflow-hidden`}>
-          <img loading="lazy" alt={`Punto Panorámico — Bariloche — gallery photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
+          <img loading="lazy" decoding="async" alt={`Punto Panorámico - Circuito Chico viewpoint in San Carlos de Bariloche, Argentina — gallery photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
         </figure>
       ))}
     </div>

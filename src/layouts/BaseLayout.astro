@@ -1,15 +1,30 @@
 ---
 import '../styles/global.css';
 import type { Lang } from '../i18n/utils';
-import { LANG_LABELS, LANGUAGES } from '../i18n/utils';
+import { LANGUAGES, DEFAULT_LANG } from '../i18n/utils';
+import { ATTRACTION } from '../data/attraction';
 
-interface Props { lang: Lang; title: string; description: string; }
-const { lang, title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const alternates = LANGUAGES.map((l) => {
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  image?: string;
+  type?: string;
+}
+const { lang, title, description, image = ATTRACTION.heroImage, type = 'website' } = Astro.props;
+
+const site = Astro.site ?? new URL(ATTRACTION.siteUrl);
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL(image, site).href;
+
+const pathFor = (l: Lang) => {
   const path = Astro.url.pathname.replace(`/${lang}`, `/${l}`);
-  return { lang: l, href: new URL(path, Astro.site).href };
-});
+  return new URL(path, site).href;
+};
+const alternates = LANGUAGES.map((l) => ({ lang: l, href: pathFor(l) }));
+const xDefault = pathFor(DEFAULT_LANG);
+
+const ogLocale = lang === 'zh' ? 'zh_CN' : lang === 'it' ? 'it_IT' : lang === 'es' ? 'es_AR' : 'en_US';
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -17,16 +32,73 @@ const alternates = LANGUAGES.map((l) => {
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+  <!-- Canonical + hreflang -->
   <link rel="canonical" href={canonical} />
   {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+  <link rel="alternate" hreflang="x-default" href={xDefault} />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0B1F1A" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mirador Chico" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={type} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : lang === 'it' ? 'it_IT' : lang === 'es' ? 'es_AR' : 'en_US'} />
+  <meta property="og:site_name" content={ATTRACTION.fullName} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content={`${ATTRACTION.fullName} in ${ATTRACTION.city}`} />
+  <meta property="og:locale" content={ogLocale} />
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content={`${ATTRACTION.fullName} in ${ATTRACTION.city}`} />
+
+  <!-- Geographic entity (NAP) -->
+  <meta name="geo.region" content={ATTRACTION.stateCode} />
+  <meta name="geo.placename" content={ATTRACTION.city} />
+  <meta name="geo.position" content={`${ATTRACTION.latitude};${ATTRACTION.longitude}`} />
+  <meta name="ICBM" content={`${ATTRACTION.latitude}, ${ATTRACTION.longitude}`} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+  <!-- Google Analytics 4 (GA4) -->
+  <script is:inline>
+    (function () {
+      try {
+        if (localStorage.getItem('miradorchico:analytics-consent') === 'denied') return;
+      } catch (e) {}
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
+    })();
+  </script>
 </head>
 <body><slot /></body>
+<script is:inline>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function () {});
+    });
+  }
+</script>
 </html>

@@ -1,32 +1,189 @@
 ---
 import type { Lang } from '../i18n/utils';
+import { LANGUAGES } from '../i18n/utils';
+import { faq, t } from '../i18n/translations';
+import { ATTRACTION, ALTERNATE_NAMES, NEARBY_LANDMARKS } from '../data/attraction';
+
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 
+const abs = (path: string) => new URL(path, Astro.site ?? new URL(ATTRACTION.siteUrl)).href;
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+const siteUrl = abs('/');
+const attractionId = `${siteUrl}#attraction`;
+const orgId = `${siteUrl}#organization`;
+const websiteId = `${siteUrl}#website`;
+const breadcrumbId = `${siteUrl}#breadcrumb`;
+
 const descMap: Record<Lang, string> = {
-  zh: 'Punto Panorámico（巴里洛切小环线 RP77）是一处免费、24 小时开放的公共观景台，俯瞰纳韦尔瓦皮湖、劳劳半岛与特罗纳多峰，位于纳韦尔瓦皮国家公园内。',
-  en: 'Punto Panorámico on the Circuito Chico (RP77) in Bariloche — a free, 24-hour public viewpoint overlooking Nahuel Huapi Lake, the Llao Llao peninsula and Cerro Tronador, inside Nahuel Huapi National Park.',
-  es: 'Punto Panorámico en el Circuito Chico (RP77) de Bariloche — un mirador público libre y abierto las 24 h, con vistas al lago Nahuel Huapi, la península de Llao Llao y el Cerro Tronador, dentro del Parque Nacional Nahuel Huapi.',
+  zh: `Punto Panorámico - Circuito Chico（巴里洛切小环线 RP77）是一处免费、24 小时开放的公共观景台，俯瞰纳韦尔瓦皮湖、劳劳半岛与特罗纳多峰，位于纳韦尔瓦皮国家公园内。`,
+  en: `Punto Panorámico - Circuito Chico on the Circuito Chico (RP77) in Bariloche is a free, 24-hour public viewpoint overlooking Nahuel Huapi Lake, the Llao Llao peninsula and Cerro Tronador, inside Nahuel Huapi National Park.`,
+  it: `Il Punto Panorámico - Circuito Chico sul Circuito Chico (RP77) a Bariloche è un belvedere pubblico libero e aperto 24 h, con vista sul lago Nahuel Huapi, la penisola di Llao Llao e il Cerro Tronador, dentro il Parco Nazionale Nahuel Huapi.`,
+  es: `Punto Panorámico - Circuito Chico en el Circuito Chico (RP77) de Bariloche es un mirador público libre y abierto las 24 h, con vistas al lago Nahuel Huapi, la península de Llao Llao y el Cerro Tronador, dentro del Parque Nacional Nahuel Huapi.`,
 };
 
-const tourist = JSON.stringify({
-  '@context': 'https://schema.org', '@type': 'TouristAttraction',
-  name: 'Punto Panorámico - Bariloche Viewpoint', description: descMap[lang],
-  image: new URL('/gallery/punto-panoramico-circuito-chico-1.jpg', Astro.site).href,
-  address: { '@type': 'PostalAddress', streetAddress: 'Circuito Chico (RP77)', addressLocality: 'San Carlos de Bariloche', addressRegion: 'Río Negro', postalCode: '', addressCountry: 'AR' },
-  geo: { '@type': 'GeoCoordinates', latitude: -41.1233, longitude: -71.3472 },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '15000' },
-  openingHours: 'Mo-Su 00:00-24:00',
-});
+const images = [
+  ATTRACTION.heroImage,
+  `${ATTRACTION.galleryPrefix}2.jpg`,
+  `${ATTRACTION.galleryPrefix}3.jpg`,
+  `${ATTRACTION.galleryPrefix}10.jpg`,
+].map((p) => abs(p));
 
-const faqData = JSON.stringify({
-  '@context': 'https://schema.org', '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'No. Punto Panorámico is a free public viewpoint, open 24 hours and unattended. Daylight and dusk offer the best views.' } },
-    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'From downtown Bariloche, drive, take a taxi/remis, cycle the paved RP77 Circuito Chico, or ride Línea 20 and walk from a nearby stop. From BRC airport, most visitors first reach town and then continue by rental car, taxi/remis, tour, or a transfer to Línea 20.' } },
-    { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'On a clear day for the blue lake and snow peaks; about 60 minutes before sunset Cerro Tronador glows gold-red — the golden window for photography.' } },
-    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The terrace edge has no railing — keep clear of the drop and watch children. The Andean westerlies are strong, so dress for wind and cold; there are no facilities nearby.' } },
+// Target query cluster taken from Search Console impressions: the head term
+// plus the intent modifiers ("cómo llegar") and the semantic entities the page
+// now covers (both lakes, the restaurant, the RP77 loop).
+const KEYWORDS = [
+  'Punto Panorámico',
+  'Punto Panorámico Circuito Chico',
+  'mirador Bariloche',
+  'Circuito Chico',
+  'cómo llegar Punto Panorámico',
+  'Lago Nahuel Huapi',
+  'Lago Moreno',
+  'Llao Llao',
+  'RP77',
+  'Restaurant Punto Panorámico',
+].join(', ');
+
+const touristAttraction = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  '@id': attractionId,
+  name: ATTRACTION.fullName,
+  alternateName: ALTERNATE_NAMES as unknown as string[],
+  description: descMap[lang],
+  keywords: KEYWORDS,
+  touristType: ['Sightseeing', 'Photography', 'Nature', 'Road trip'],
+  url: siteUrl,
+  image: images,
+  isAccessibleForFree: true,
+  publicAccess: true,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: ATTRACTION.streetAddress,
+    addressLocality: ATTRACTION.city,
+    addressRegion: ATTRACTION.state,
+    postalCode: ATTRACTION.postalCode,
+    addressCountry: ATTRACTION.countryCode,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: ATTRACTION.latitude,
+    longitude: ATTRACTION.longitude,
+  },
+  hasMap: ATTRACTION.mapsShareUrl,
+  sameAs: [ATTRACTION.mapsShareUrl, ATTRACTION.govtTourismUrl, ATTRACTION.nationalParkUrl],
+  containedInPlace: {
+    '@type': 'Park',
+    name: 'Parque Nacional Nahuel Huapi',
+    url: ATTRACTION.nationalParkUrl,
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: 4.9,
+    reviewCount: 15905,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  isPartOf: { '@id': websiteId },
+  provider: { '@id': orgId },
+};
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': orgId,
+  name: 'miradorchico',
+  url: siteUrl,
+  description: 'Independent nature-education project documenting Punto Panorámico - Circuito Chico, San Carlos de Bariloche, Argentina.',
+  logo: abs('/icon.svg'),
+  areaServed: {
+    '@type': 'Place',
+    name: `${ATTRACTION.city}, ${ATTRACTION.state}, ${ATTRACTION.country}`,
+  },
+};
+
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': websiteId,
+  url: siteUrl,
+  name: ATTRACTION.fullName,
+  inLanguage: LANGUAGES as unknown as string[],
+  about: { '@id': attractionId },
+  publisher: { '@id': orgId },
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': breadcrumbId,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: ATTRACTION.fullName, item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: ATTRACTION.city, item: `${siteUrl}#location` },
+    { '@type': 'ListItem', position: 3, name: ATTRACTION.state },
+    { '@type': 'ListItem', position: 4, name: ATTRACTION.country },
   ],
-});
+};
+
+const faqPage = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.items.map((item) => ({
+    '@type': 'Question',
+    name: stripTags(t(item.q, lang)),
+    acceptedAnswer: { '@type': 'Answer', text: stripTags(t(item.a, lang)) },
+  })),
+};
+
+// Nearby landmarks as a lightweight ItemList for entity disambiguation.
+const nearbyList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Landmarks around ${ATTRACTION.fullName}`,
+  itemListElement: NEARBY_LANDMARKS.map((l, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: { '@type': 'TouristAttraction', name: l.name },
+  })),
+};
+
+// The private restaurant that sits beside the free public terrace. Modelled as
+// its own node (and kept separate from the attraction) so search engines can
+// tell the public viewpoint apart from the business — the same distinction the
+// on-page copy makes. No rating or price data is asserted here.
+const restaurant = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  '@id': `${siteUrl}#restaurant`,
+  name: 'Restaurant Punto Panorámico',
+  servesCuisine: ['Argentine', 'Parrilla', 'Pizza'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: ATTRACTION.streetAddress,
+    addressLocality: ATTRACTION.city,
+    addressRegion: ATTRACTION.state,
+    postalCode: ATTRACTION.postalCode,
+    addressCountry: ATTRACTION.countryCode,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: ATTRACTION.latitude,
+    longitude: ATTRACTION.longitude,
+  },
+  containedInPlace: { '@id': attractionId },
+};
+
+const payloads = [touristAttraction, organization, website, breadcrumb, faqPage, nearbyList, restaurant];
+const jsonLd = payloads
+  .map((p) => `<script type="application/ld+json">${JSON.stringify(p)}</script>`)
+  .join('');
 ---
-<Fragment set:html={'<script type="application/ld+json">' + tourist + '</script><script type="application/ld+json">' + faqData + '</script>'} />
+<Fragment set:html={jsonLd} />

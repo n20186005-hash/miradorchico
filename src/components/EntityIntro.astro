@@ -1,0 +1,90 @@
+---
+import type { Lang } from '../i18n/utils';
+import { entity } from '../i18n/translations';
+import { ATTRACTION, NEARBY_LANDMARKS } from '../data/attraction';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.es || s.pt || '');
+const landmarkQuery = (q: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+---
+<section id="about" class="max-w-7xl mx-auto px-6 pt-20 pb-4">
+  <!-- Geographic breadcrumb -->
+  <nav aria-label={_(entity.breadcrumbAria)} class="text-xs text-[color:var(--color-moss)]/60">
+    <ol class="flex flex-wrap items-center gap-2">
+      <li><a href={`/${lang}/`} class="link-underline">{_(entity.breadcrumbHome)}</a></li>
+      <li aria-hidden="true">›</li>
+      <li>{ATTRACTION.fullName}</li>
+      <li aria-hidden="true">›</li>
+      <li>{ATTRACTION.city}</li>
+      <li aria-hidden="true">›</li>
+      <li>{ATTRACTION.state}</li>
+      <li aria-hidden="true">›</li>
+      <li>{ATTRACTION.country}</li>
+    </ol>
+  </nav>
+
+  <!-- Unique H1: official full name + city -->
+  <h1 class="font-display text-3xl md:text-5xl mt-6 leading-tight text-[color:var(--color-ink)]">
+    {ATTRACTION.fullName} ({ATTRACTION.city})
+  </h1>
+
+  <!-- NAP (Name / Address / Place) consistency line -->
+  <div class="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-[color:var(--color-moss)]/85">
+    <span><strong class="text-[color:var(--color-emerald)]">{_(entity.officialNameLabel)}:</strong> {ATTRACTION.fullName}</span>
+    <span><strong class="text-[color:var(--color-emerald)]">{_(entity.locationLabel)}:</strong> {ATTRACTION.city}, {ATTRACTION.state}, {ATTRACTION.country}</span>
+  </div>
+
+  <!-- Keyword-rich in-page navigation: exact-match anchors instead of "click here" -->
+  <nav aria-label={_(entity.jumpHeading)} class="mt-7">
+    <ul class="flex flex-wrap gap-2">
+      {entity.jumpLinks.map((l) => (
+        <li>
+          <a href={l.href} class="chip inline-block text-sm px-4 py-2 rounded-full bg-white text-[color:var(--color-moss)]">
+            {_(l.label)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="mt-14 grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-6">
+      <h2 class="font-display text-2xl md:text-3xl text-[color:var(--color-ink)]">{_(entity.aboutHeading)}</h2>
+      <p class="mt-4 text-lg leading-[1.85] text-[color:var(--color-moss)]" set:html={_(entity.welcome)} />
+    </div>
+
+    <div class="md:col-span-6 space-y-10">
+      <div>
+        <h2 class="font-display text-2xl md:text-3xl text-[color:var(--color-ink)]">{_(entity.landmarksHeading)}</h2>
+        <p class="mt-4 leading-relaxed text-[color:var(--color-moss)]" set:html={_(entity.landmarks)} />
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {NEARBY_LANDMARKS.map((l) => (
+            <li>
+              <a
+                href={landmarkQuery(l.query)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="chip inline-block text-sm px-4 py-2 rounded-full bg-white"
+              >
+                {l.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href={`/${lang}/#surrounding`} class="mt-5 inline-block link-underline text-sm text-[color:var(--color-emerald)]">
+          {_(entity.exploreLink)}
+        </a>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl md:text-3xl text-[color:var(--color-ink)]">{_(entity.historyHeading)}</h2>
+        <p class="mt-4 leading-relaxed text-[color:var(--color-moss)]">{_(entity.history)}</p>
+        <a href={`/${lang}/#encyclopedia`} class="mt-5 inline-block link-underline text-sm text-[color:var(--color-emerald)]">
+          {_(entity.historyLink)}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

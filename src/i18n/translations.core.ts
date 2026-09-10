@@ -2,6 +2,8 @@ type T = { zh: string; en: string; it: string; es: string };
 
 // ── Nav ──
 export const nav = {
+  brand: { zh: `Punto Panorámico - Circuito Chico`, en: `Punto Panorámico - Circuito Chico`, it: `Punto Panorámico - Circuito Chico`, es: `Punto Panorámico - Circuito Chico` } as T,
+  brandSub: { zh: `圣卡洛斯-德巴里洛切 · 内格罗河省 · 阿根廷`, en: `San Carlos de Bariloche · Río Negro · Argentina`, it: `San Carlos de Bariloche · Río Negro · Argentina`, es: `San Carlos de Bariloche · Río Negro · Argentina` } as T,
   overview: { zh: `前言`, en: `Preamble`, it: `Premessa`, es: `Preámbulo` } as T,
   highlights: { zh: `亮点`, en: `Highlights`, it: `Punti salienti`, es: `Destacados` } as T,
   guide: { zh: `游览指南`, en: `Guide`, it: `Guida`, es: `Guía` } as T,
@@ -34,6 +36,7 @@ export const hero = {
     es: `Punto Panorámico · Un mirador público y abierto junto a la ruta provincial RP77 del "Circuito Chico" — con vistas al azul profundo del lago Nahuel Huapi, la península de Llao Llao y la nieve del Cerro Tronador, una de las ventanas más serenas de los Andes.`,
   } as T,
   viewMap: { zh: `在 Google 地图上查看位置`, en: `View location on Google Maps`, it: `Vedi la posizione su Google Maps`, es: `Ver la ubicación en Google Maps` } as T,
+  howToGet: { zh: `如何前往观景台`, en: `How to get to Punto Panorámico`, it: `Come arrivare al Punto Panorámico`, es: `Cómo llegar al Punto Panorámico` } as T,
   statReviews: { zh: `评价`, en: `reviews`, it: `recensioni`, es: `opiniones` } as T,
   statLength: { zh: `评分`, en: `Rating`, it: `Valutazione`, es: `Puntuación` } as T,
   statFalls: { zh: `开放时间`, en: `Hours`, it: `Orari`, es: `Horario` } as T,
@@ -136,7 +139,7 @@ export const transport = {
 export const climate = {
   sectionNum: { zh: `气候与光影`, en: `Climate & Light`, it: `Clima e luce`, es: `Clima y Luz` } as T,
   heading: { zh: `此刻，安第斯的<br/><em class="text-[color:var(--color-emerald)]">风与光</em>`, en: `Today's live rhythm<br/><em class="text-[color:var(--color-emerald)]"> of wind & light</em>`, it: `Il ritmo in diretta<br/><em class="text-[color:var(--color-emerald)]">di vento e luce</em>`, es: `El ritmo en vivo<br/><em class="text-[color:var(--color-emerald)]"> del viento y la luz</em>` } as T,
-  subtitle: { zh: `巴里洛切以“多变”与“强风”著称。以下数据由公开 API（Open-Meteo）实时获取，供您规划行程与拍摄。`, en: `Bariloche is famous for changeable weather and strong wind. Data below is fetched live from the public Open-Meteo API to help you plan and shoot.`, it: `Bariloche è famosa per clima variabile e vento forte. I dati sotto arrivano in tempo reale dall'API pubblica Open-Meteo per aiutarti a pianificare e fotografare.`, es: `Bariloche es famosa por un clima cambiante y viento fuerte. Los datos se obtienen en vivo de la API pública de Open-Meteo para ayudarle a planificar y fotografiar.` } as T,
+  subtitle: { zh: `巴里洛切以“多变”与“强风”著称。以下为观景台位置的风速、日落与黄金时刻参考，方便您规划行程与拍摄。`, en: `Bariloche is famous for changeable weather and strong wind. Below are wind, sunset and golden-hour references for the viewpoint to help you plan and shoot.`, it: `Bariloche è famosa per clima variabile e vento forte. Qui trovi riferimenti su vento, tramonto e ora dorata al belvedere per pianificare e fotografare.`, es: `Bariloche es famosa por un clima cambiante y viento fuerte. Aquí tienes referencias de viento, atardecer y hora dorada en el mirador para planificar y fotografiar.` } as T,
   windLabel: { zh: `当前风速`, en: `Current wind`, it: `Vento attuale`, es: `Viento actual` } as T,
   directionLabel: { zh: `风向`, en: `Wind direction`, it: `Direzione del vento`, es: `Dirección del viento` } as T,
   gustLabel: { zh: `阵风`, en: `Gusts`, it: `Raffiche`, es: `Ráfagas` } as T,
