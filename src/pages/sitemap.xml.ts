@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { LANGUAGES } from '../i18n/utils';
 import { ATTRACTION } from '../data/attraction';
 
-const PATHS = ['', 'privacy/', 'terms/', 'cookies/'];
+const PATHS = ['', 'privacy/', 'terms/', 'cookies/', 'como-llegar/', 'circuito-chico-recorrido/', 'vistas-lago-moreno/'];
 
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL(ATTRACTION.siteUrl);

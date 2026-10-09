@@ -181,7 +181,7 @@ export const ecology = {
 
 // ── FAQ ──
 export const faq = {
-  sectionNum: { zh: `官方访客指南`, en: `Official Visitor Guide`, it: `Guida ufficiale del visitante`, es: `Guía Oficial del Visitante` } as T,
+  sectionNum: { zh: `独立访客指南`, en: `Independent Visitor Guide`, it: `Guida indipendente del visitante`, es: `Guía de visita independiente` } as T,
   heading: { zh: `访客指南与<em class="text-[color:var(--color-emerald)]">常见问题</em>`, en: `Visitor Guide &<br/><em class="text-[color:var(--color-emerald)]"> FAQ</em>`, it: `Guida del visitante e<br/><em class="text-[color:var(--color-emerald)]"> domande frequenti</em>`, es: `Guía del visitante &<br/><em class="text-[color:var(--color-emerald)]"> preguntas</em>` } as T,
   disclaimer: {
     zh: `以下信息由 miradorchico 独立科普团队根据公开资料整理，仅供访客参考。出行前请通过阿根廷官方旅游与国家公园渠道核实最新政策。`,
@@ -202,10 +202,10 @@ export const faq = {
     {
       q: { zh: `如何前往 Punto Panorámico？`, en: `How do I get to Punto Panorámico?`, it: `Come arrivo al Punto Panorámico?`, es: `¿Cómo llego al Punto Panorámico?` } as T,
       a: {
-        zh: `从巴里洛切市中心前往，最方便的方式是沿小环线 RP77 自驾、打车 / remis、骑行，或乘 Línea 20 到附近站点后步行；若从 Teniente Luis Candelaria（BRC）机场出发，通常需先进入市区，再换乘 Línea 20、参加小环线半日游，或直接租车 / taxi / remis 前往。`,
-        en: `From downtown Bariloche, the easiest options are to drive, take a taxi/remis, cycle the paved RP77 Circuito Chico, or ride Línea 20 and walk from a nearby stop; from Teniente Luis Candelaria Airport (BRC), most travellers first reach town and then transfer to Línea 20, join a Circuito Chico half-day tour, or continue directly by rental car or taxi/remis.`,
-        it: `Dal centro di Bariloche, le opzioni più semplici sono l'auto, il taxi/remis, la bicicletta lungo la RP77 asfaltata oppure la Línea 20 con una breve camminata dalla fermata vicina; dall'aeroporto Teniente Luis Candelaria (BRC), di solito si raggiunge prima la città e poi si cambia sulla Línea 20, si partecipa a un tour di mezza giornata del Circuito Chico oppure si prosegue direttamente con auto a noleggio o taxi/remis.`,
-        es: `Desde el centro de Bariloche, las opciones más sencillas son ir en auto, taxi/remis, bicicleta por la RP77 pavimentada, o tomar la Línea 20 y caminar desde una parada cercana; desde el aeropuerto Teniente Luis Candelaria (BRC), la mayoría primero llega al centro y luego combina con la Línea 20, se suma a un tour de medio día por el Circuito Chico o sigue directamente en auto de alquiler o taxi/remis.`,
+        zh: `从巴里洛切市中心前往，最方便的方式是沿小环线 RP77 自驾、打车 / remis、骑行，或乘坐开往 Llao Llao 方向的公交并请司机在观景台附近停靠、参加小环线半日游；若从 Teniente Luis Candelaria（BRC）机场出发，通常需先进入市区，再换乘公交、参加小环线半日游，或直接租车 / taxi / remis 前往。`,
+        en: `From downtown Bariloche, the easiest options are to drive, take a taxi/remis, cycle the paved RP77 Circuito Chico, or ride a bus toward Llao Llao and ask the driver to stop near the viewpoint (or join a Circuito Chico half-day tour); from Teniente Luis Candelaria Airport (BRC), most travellers first reach town and then transfer to a bus, join a Circuito Chico tour, or continue directly by rental car or taxi/remis.`,
+        it: `Dal centro di Bariloche, le opzioni più semplici sono l'auto, il taxi/remis, la bicicletta lungo la RP77 asfaltata oppure l'autobus verso Llao Llao chiedendo all'autista di fermarsi vicino al belvedere (o un tour di mezza giornata del Circuito Chico); dall'aeroporto Teniente Luis Candelaria (BRC), di solito si raggiunge prima la città e poi si cambia sull'autobus, si partecipa a un tour del Circuito Chico oppure si prosegue direttamente con auto a noleggio o taxi/remis.`,
+        es: `Desde el centro de Bariloche, las opciones más sencillas son ir en auto, taxi/remis, bicicleta por la RP77 pavimentada, o tomar un colectivo hacia Llao Llao y pedirle al chofer que pare cerca del mirador (o sumarse a un tour de medio día por el Circuito Chico); desde el aeropuerto Teniente Luis Candelaria (BRC), la mayoría primero llega al centro y luego combina con el colectivo, se une a un tour del Circuito Chico o sigue directamente en auto de alquiler o taxi/remis.`,
       } as T,
     },
     {
@@ -220,10 +220,10 @@ export const faq = {
     {
       q: { zh: `参观安全吗？`, en: `Is it safe to visit?`, it: `È sicuro visitarlo?`, es: `¿Es seguro visitar?` } as T,
       a: {
-        zh: `台地临崖<strong>无护栏</strong>，请与边缘保持距离、看好儿童；安第斯西风强劲，注意防风保暖；台地上没有任何设施，请自备饮水与食物，并带走所有垃圾。`,
-        en: `The terrace edge has <strong>no railing</strong> — keep clear of the drop and watch children; the Andean westerlies are strong, so dress for wind and cold; the terrace itself has no facilities, so bring water and food and carry out all litter.`,
-        it: `Il bordo della terrazza <strong>non ha ringhiera</strong>: resta lontano dal vuoto e sorveglia i bambini; il vento occidentale andino è forte, vestiti per il vento e il freddo; la terrazza non ha servizi, porta acqua e cibo e porta via i rifiuti.`,
-        es: `El borde de la terraza <strong>no tiene baranda</strong>: manténgase lejos del vacío y vigile a los niños; el viento oeste andino es fuerte, así que abríguese; la terraza no tiene servicios, traiga agua y comida y lleve su basura.`,
+        zh: `台地边缘<strong>开阔临崖</strong>，请与边缘保持安全距离、看管好儿童；安第斯西风强劲，注意防风保暖；台地上没有任何设施，请自备饮水与食物，并带走所有垃圾。`,
+        en: `The terrace edge is <strong>open to a drop</strong> — keep a safe distance from the edge and watch children; the Andean westerlies are strong, so dress for wind and cold; the terrace itself has no facilities, so bring water and food and carry out all litter.`,
+        it: `Il bordo della terrazza è <strong>aperto sul vuoto</strong>: mantieni una distanza di sicurezza dal bordo e sorveglia i bambini; il vento occidentale andino è forte, vestiti per il vento e il freddo; la terrazza non ha servizi, porta acqua e cibo e porta via i rifiuti.`,
+        es: `El borde de la terraza <strong>está abierto al vacío</strong>: mantenga una distancia de seguridad del borde y vigile a los niños; el viento oeste andino es fuerte, así que abríguese; la terraza no tiene servicios, traiga agua y comida y lleve su basura.`,
       } as T,
     },
     {
@@ -247,10 +247,10 @@ export const faq = {
     {
       q: { zh: `从观景台能看到什么？`, en: `What can I see from the viewpoint?`, it: `Cosa si vede dal belvedere?`, es: `¿Qué se ve desde el mirador?` } as T,
       a: {
-        zh: `可俯瞰纳韦尔瓦皮湖（Lago Nahuel Huapi）的深蓝湖水，侧旁即是莫雷诺湖（Lago Moreno）；此外还有劳劳半岛（Llao Llao）与劳劳酒店，以及远处海拔 3,554 米的特罗纳多峰（Cerro Tronador）。晴朗黄昏时雪峰会被夕阳染成金红。`,
-        en: `You look out over the deep blue water of Nahuel Huapi Lake with Lago Moreno beside it, the Llao Llao peninsula and its historic hotel, and snow-capped Cerro Tronador (3,554 m) beyond. On a clear dusk the peak turns gold-red.`,
-        it: `Si ammirano il blu profondo del lago Nahuel Huapi con accanto il lago Moreno, la penisola di Llao Llao con il suo storico hotel e, più in là, il Cerro Tronador (3.554 m). In un tramonto sereno la cima si tinge d'oro e rosso.`,
-        es: `Se contempla el azul profundo del lago Nahuel Huapi y, al lado, el lago Moreno, además de la península de Llao Llao con su hotel histórico y, más allá, el Cerro Tronador (3.554 m). En un atardecer despejado la cumbre se tiñe de oro y rojo.`,
+        zh: `正对莫雷诺湖（Lago Moreno）与劳劳半岛（Península Llao Llao）的开阔水面，侧旁可见纳韦尔瓦皮湖（Lago Nahuel Huapi），远处是海拔 3,554 米的特罗纳多峰（Cerro Tronador）与劳劳酒店。晴朗黄昏时雪峰会被夕阳染成金红。`,
+        en: `You face the open water of Lago Moreno and the Llao Llao peninsula, with Lago Nahuel Huapi beside it and snow-capped Cerro Tronador (3,554 m) rising beyond, along with the historic Llao Llao hotel. On a clear dusk the peak turns gold-red.`,
+        it: `Sei di fronte alle acque aperte del lago Moreno e della penisola di Llao Llao, con il lago Nahuel Huapi accanto e il Cerro Tronador (3.554 m) più in là, insieme all'storico hotel di Llao Llao. In un tramonto sereno la cima si tinge d'oro e rosso.`,
+        es: `Tienes enfrente las aguas abiertas del lago Moreno y la península de Llao Llao, con el lago Nahuel Huapi al lado y el Cerro Tronador (3.554 m) al fondo, junto al histórico hotel de Llao Llao. En un atardecer despejado la cumbre se tiñe de oro y rojo.`,
       } as T,
     },
     {
@@ -319,10 +319,10 @@ export const leaveNoTrace = {
       icon: '👣',
       title: { zh: `不离开台地与步道`, en: `Stay on the Terrace`, it: `Resta sulla terrazza`, es: `Quédese en la terraza` } as T,
       desc: {
-        zh: `台地边缘无护栏且临近私家林地。请勿翻越或进入未开放区域，以免破坏植被或引发险情。`,
-        en: `The terrace edge has no railing and borders private woodland. Do not climb over or enter closed areas, to avoid damaging vegetation or risking accidents.`,
-        it: `Il bordo della terrazza non ha ringhiera e confina con bosco privato. Non oltrepassare né entrare in zone chiuse, per non danneggiare la vegetazione né rischiare incidenti.`,
-        es: `El borde de la terraza no tiene baranda y linda con bosque privado. No cruce ni ingrese a zonas cerradas, para no dañar la vegetación ni arriesgarse.`,
+        zh: `台地边缘开阔临崖且临近私家林地。请勿翻越或进入未开放区域，以免破坏植被或引发险情。`,
+        en: `The terrace edge is open to a drop and borders private woodland. Do not climb over or enter closed areas, to avoid damaging vegetation or risking accidents.`,
+        it: `Il bordo della terrazza è aperto sul vuoto e confina con bosco privato. Non oltrepassare né entrare in zone chiuse, per non danneggiare la vegetazione né rischiare incidenti.`,
+        es: `El borde de la terraza está abierto al vacío y linda con bosque privado. No cruce ni ingrese a zonas cerradas, para no dañar la vegetación ni arriesgarse.`,
       } as T,
     },
     {
@@ -532,22 +532,28 @@ export const cookies = {
 // Titles stay near ~60 characters so Google does not truncate them in the SERP.
 export const meta = {
   title: {
-    zh: `Punto Panorámico 观景台 · 小环线（巴里洛切）`,
-    en: `Punto Panorámico Viewpoint - Circuito Chico (Bariloche)`,
-    it: `Belvedere Punto Panorámico - Circuito Chico (Bariloche)`,
-    es: `Mirador Punto Panorámico - Circuito Chico (San Carlos de Bariloche)`,
+    zh: `Punto Panorámico 观景台 · 怎么去、地图与莫雷诺湖（巴里洛切小环线）`,
+    en: `Punto Panorámico Bariloche: Directions, Map & Views`,
+    it: `Belvedere Punto Panorámico Bariloche: Come Arrivare e Mappa`,
+    es: `Punto Panorámico Bariloche: Cómo Llegar y Mapa | Circuito Chico`,
   } as T,
   description: {
-    zh: `到访巴里洛切的 Punto Panorámico 观景台（4.9★），饱览莫雷诺湖与 Llao Llao 的最佳视野。含最新交通方式与地图信息。`,
-    en: `Visit the Punto Panorámico viewpoint in Bariloche (4.9★). Enjoy the best views over Lago Moreno and Llao Llao. Up-to-date information on how to get there and a map.`,
-    it: `Visita il belvedere Punto Panorámico a Bariloche (4.9★). Goditi la vista migliore sul Lago Moreno e su Llao Llao. Informazioni aggiornate su come arrivare e mappa.`,
-    es: `Visita el Mirador Punto Panorámico en Bariloche (4.9★). Disfruta de la mejor vista al Lago Moreno y Llao Llao. Información actualizada de cómo llegar y mapa.`,
+    zh: `到访巴里洛切的 Punto Panorámico 观景台（4.9★），正对莫雷诺湖与 Llao Llao 的开阔视野。含最新交通方式、地图与游览建议。`,
+    en: `Visit Punto Panorámico in Bariloche (4.9★): location, map, views over Lago Moreno, photos and tips to plan your visit.`,
+    it: `Visita il Punto Panorámico a Bariloche (4.9★): posizione, mappa, viste sul lago Moreno, foto e consigli per organizzare la visita.`,
+    es: `Visitá el Punto Panorámico del Circuito Chico en Bariloche: ubicación, mapa, vistas del lago Moreno, fotos y consejos para organizar tu visita.`,
   } as T,
 };
 
 // ── Entity Semantic Binding (single-attraction SEO) ──
 export const entity = {
   sectionNum: { zh: `实体信息`, en: `Entity`, it: `Entità`, es: `Entidad` } as T,
+  h1: {
+    zh: `Punto Panorámico（巴里洛切 · 小环线）`,
+    en: `Punto Panorámico Bariloche (Circuito Chico)`,
+    it: `Punto Panorámico di Bariloche (Circuito Chico)`,
+    es: `Punto Panorámico de Bariloche (Circuito Chico)`,
+  } as T,
   officialNameLabel: { zh: `官方全称`, en: `Official name`, it: `Nome ufficiale`, es: `Nombre oficial` } as T,
   locationLabel: { zh: `所在地`, en: `Location`, it: `Località`, es: `Ubicación` } as T,
   breadcrumbHome: { zh: `首页`, en: `Home`, it: `Home`, es: `Inicio` } as T,
@@ -673,10 +679,10 @@ export const locationMap = {
     es: `Ubicación y cómo visitar el Punto Panorámico en San Carlos de Bariloche`,
   } as T,
   subtitle: {
-    zh: `Punto Panorámico - Circuito Chico 位于小环线（Cto. Chico / RP77）旁，距巴里洛切市中心约 12 公里。以下为官方地图定位与一致的名称、地址信息，方便您导航与核实。`,
-    en: `Punto Panorámico - Circuito Chico sits beside the Circuito Chico (Cto. Chico / RP77), about 12 km from downtown Bariloche. Below is the official map location together with consistent name and address details for navigation and verification.`,
-    it: `Il Punto Panorámico - Circuito Chico si trova accanto al Circuito Chico (Cto. Chico / RP77), a circa 12 km dal centro di Bariloche. Qui sotto la posizione ufficiale sulla mappa con nome e indirizzo coerenti per navigare e verificare.`,
-    es: `Punto Panorámico - Circuito Chico está junto al Circuito Chico (Cto. Chico / RP77), a unos 12 km del centro de Bariloche. Abajo está la ubicación oficial en el mapa junto con el nombre y la dirección coherentes para navegar y verificar.`,
+    zh: `Punto Panorámico - Circuito Chico 位于小环线（Cto. Chico / RP77）旁，距巴里洛切市中心约 24 公里。以下为官方地图定位与一致的名称、地址信息，方便您导航与核实。`,
+    en: `Punto Panorámico - Circuito Chico sits beside the Circuito Chico (Cto. Chico / RP77), about 24 km from downtown Bariloche. Below is the official map location together with consistent name and address details for navigation and verification.`,
+    it: `Il Punto Panorámico - Circuito Chico si trova accanto al Circuito Chico (Cto. Chico / RP77), a circa 24 km dal centro di Bariloche. Qui sotto la posizione ufficiale sulla mappa con nome e indirizzo coerenti per navigare e verificare.`,
+    es: `Punto Panorámico - Circuito Chico está junto al Circuito Chico (Cto. Chico / RP77), a unos 24 km del centro de Bariloche. Abajo está la ubicación oficial en el mapa junto con el nombre y la dirección coherentes para navegar y verificar.`,
   } as T,
   addressLabel: { zh: `地址`, en: `Address`, it: `Indirizzo`, es: `Dirección` } as T,
   addressValue: { zh: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, 阿根廷`, en: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, Argentina`, it: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, Argentina`, es: `Cto. Chico, San Carlos de Bariloche, Río Negro R8400, Argentina` } as T,
@@ -686,10 +692,10 @@ export const locationMap = {
   hoursValue: { zh: `全天 24 小时 · 免费`, en: `Open 24 h · Free`, it: `Aperto 24 h · Gratis`, es: `Abierto 24 h · Gratis` } as T,
   directionsLabel: { zh: `如何到达`, en: `Getting there`, it: `Come arrivare`, es: `Cómo llegar` } as T,
   directions: {
-    zh: `从市中心沿小环线 RP77 向西南自驾约 15 分钟；也可乘坐 Línea 20 公交在附近站点下车步行，或打车 / remis 直达。全线为铺装柏油路。`,
-    en: `Drive about 15 minutes southwest from downtown along the RP77 Circuito Chico; you can also take the Línea 20 bus and walk from a nearby stop, or arrive directly by taxi/remis. The road is fully paved.`,
-    it: `In auto circa 15 minuti dal centro verso sud-ovest lungo la RP77 del Circuito Chico; puoi anche prendere la Línea 20 e camminare dalla fermata vicina, oppure arrivare direttamente in taxi/remis. Strada tutta asfaltata.`,
-    es: `En auto, unos 15 minutos desde el centro hacia el suroeste por la RP77 del Circuito Chico; también puede tomar la Línea 20 y caminar desde una parada cercana, o llegar directamente en taxi/remis. Camino totalmente pavimentado.`,
+    zh: `从市中心沿小环线 RP77 向西南自驾约 25–35 分钟；也可打车 / remis 直达，或乘坐开往 Llao Llao 方向的公交并请司机在观景台附近停靠。全线为铺装柏油路。`,
+    en: `Drive about 25–35 minutes southwest from downtown along the RP77 Circuito Chico; you can also arrive directly by taxi/remis, or take a bus toward Llao Llao and ask the driver to stop near the viewpoint. The road is fully paved.`,
+    it: `In auto circa 25–35 minuti dal centro verso sud-ovest lungo la RP77 del Circuito Chico; puoi anche arrivare direttamente in taxi/remis, oppure prendere un autobus verso Llao Llao e chiedere all'autista di fermarsi vicino al belvedere. Strada tutta asfaltata.`,
+    es: `En auto, unos 25–35 minutos desde el centro hacia el suroeste por la RP77 del Circuito Chico; también puede llegar directamente en taxi/remis, o tomar un colectivo hacia Llao Llao y pedirle al chofer que pare cerca del mirador. Camino totalmente pavimentado.`,
   } as T,
   openInMaps: { zh: `在 Google 地图中打开`, en: `Open in Google Maps`, it: `Apri in Google Maps`, es: `Abrir en Google Maps` } as T,
   mapTitle: { zh: `Punto Panorámico - Circuito Chico 谷歌地图位置`, en: `Google Map of Punto Panorámico - Circuito Chico`, it: `Mappa Google del Punto Panorámico - Circuito Chico`, es: `Mapa de Google de Punto Panorámico - Circuito Chico` } as T,

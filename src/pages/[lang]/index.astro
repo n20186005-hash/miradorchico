@@ -25,6 +25,14 @@ import SourcesSection from '../../components/SourcesSection.astro';
 import LeaveNoTrace from '../../components/LeaveNoTrace.astro';
 import Footer from '../../components/Footer.astro';
 import StructuredData from '../../components/StructuredData.astro';
+import { TOPICS } from '../../i18n/topics';
+
+const guidesHeading: Record<Lang, string> = {
+  zh: '相关攻略',
+  en: 'Related guides',
+  it: 'Guide correlate',
+  es: 'Guías relacionadas',
+};
 
 export function getStaticPaths() {
   return LANGUAGES.map((lang) => ({ params: { lang } }));
@@ -56,6 +64,24 @@ const desc = _(meta.description);
   <LeaveNoTrace lang={lang} />
   <Faq lang={lang} />
   <SourcesSection lang={lang} />
+
+  <!-- Related guides: internal links to topic pages -->
+  <section class="bg-[color:var(--color-mist)] border-t border-black/5">
+    <div class="max-w-3xl mx-auto px-6 py-14">
+      <h2 class="font-display text-2xl md:text-3xl text-[color:var(--color-ink)] mb-6">{guidesHeading[lang]}</h2>
+      <ul class="grid sm:grid-cols-3 gap-4">
+        {TOPICS.map((tp) => (
+          <li>
+            <a href={`/${lang}/${tp.slug}/`} class="block rounded-2xl border border-black/10 bg-white p-5 hover:border-[color:var(--color-emerald)] transition">
+              <span class="font-display text-lg text-[color:var(--color-ink)]">{tp.h1[lang]}</span>
+              <span class="block mt-2 text-sm text-[color:var(--color-moss)]">{tp.description[lang]}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <Footer lang={lang} />
   <StructuredData lang={lang} />
 </BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicPage from '../../components/TopicPage.astro';
+import { LANGUAGES, type Lang } from '../../i18n/utils';
+import { TOPICS } from '../../i18n/topics';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang: Lang) =>
+    TOPICS.map((topic) => ({
+      params: { lang, topic: topic.slug },
+      props: { lang, topic },
+    }))
+  );
+}
+
+const { lang, topic } = Astro.props;
+const _ = (s: any) => (typeof s === 'string' ? s : s[lang] || s.es);
+---
+
+<BaseLayout lang={lang} title={_(topic.h1)} description={_(topic.description)}>
+  <TopicPage lang={lang} topic={topic} />
+</BaseLayout>
